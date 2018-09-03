@@ -65,14 +65,21 @@ namespace HRD_App
 
         private bool Validate()
         {
-            if (textBox_login.Text == "" || textBox_login.Text == "Логин"|| 
-                textBox_password.Text == "" || textBox_password.Text == "Пароль")
-            {
-                MessageBox.Show("Поля обязятельны для заполнения!");
-                return false;
-            }
+            bool isValid=true;
+            errorProvider.Clear();
 
-            return true;
+            if (textBox_login.Text == "" || textBox_login.Text == "Логин")
+            {
+                errorProvider.SetError(textBox_login, "Поле обязательно для заполнения!");
+                isValid= false;
+            }
+            if (textBox_password.Text == "" || textBox_password.Text == "Пароль")
+            {
+                errorProvider.SetError(textBox_password, "Поле обязательно для заполнения!");
+                isValid = false;
+            }
+            
+            return isValid;
         }
 
         private async void button_authorization_Click(object sender, EventArgs e)

@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox_login = new System.Windows.Forms.TextBox();
             this.textBox_password = new System.Windows.Forms.TextBox();
             this.button_authorization = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox_login
             // 
             this.textBox_login.BackColor = System.Drawing.SystemColors.Window;
             this.textBox_login.ForeColor = System.Drawing.Color.Gray;
-            this.textBox_login.Location = new System.Drawing.Point(101, 37);
-            this.textBox_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_login.Location = new System.Drawing.Point(76, 30);
             this.textBox_login.Name = "textBox_login";
-            this.textBox_login.Size = new System.Drawing.Size(213, 22);
+            this.textBox_login.Size = new System.Drawing.Size(161, 20);
             this.textBox_login.TabIndex = 1;
             this.textBox_login.TabStop = false;
             this.textBox_login.Text = "Логин";
@@ -51,10 +53,9 @@
             // 
             this.textBox_password.BackColor = System.Drawing.SystemColors.Window;
             this.textBox_password.ForeColor = System.Drawing.Color.Gray;
-            this.textBox_password.Location = new System.Drawing.Point(101, 69);
-            this.textBox_password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_password.Location = new System.Drawing.Point(76, 56);
             this.textBox_password.Name = "textBox_password";
-            this.textBox_password.Size = new System.Drawing.Size(213, 22);
+            this.textBox_password.Size = new System.Drawing.Size(161, 20);
             this.textBox_password.TabIndex = 2;
             this.textBox_password.TabStop = false;
             this.textBox_password.Text = "Пароль";
@@ -71,29 +72,35 @@
             this.button_authorization.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_authorization.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_authorization.ForeColor = System.Drawing.Color.White;
-            this.button_authorization.Location = new System.Drawing.Point(101, 101);
-            this.button_authorization.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_authorization.Location = new System.Drawing.Point(76, 82);
             this.button_authorization.Name = "button_authorization";
-            this.button_authorization.Size = new System.Drawing.Size(213, 36);
+            this.button_authorization.Size = new System.Drawing.Size(160, 29);
             this.button_authorization.TabIndex = 3;
             this.button_authorization.Text = "Войти";
             this.button_authorization.UseVisualStyleBackColor = false;
             this.button_authorization.Click += new System.EventHandler(this.button_authorization_Click);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
             // AuthorizationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(431, 180);
+            this.ClientSize = new System.Drawing.Size(323, 146);
             this.Controls.Add(this.button_authorization);
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.textBox_login);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HelpButton = true;
+            this.MaximizeBox = false;
             this.Name = "AuthorizationForm";
             this.Text = "Авторизация";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,6 +111,7 @@
         private System.Windows.Forms.TextBox textBox_login;
         private System.Windows.Forms.TextBox textBox_password;
         private System.Windows.Forms.Button button_authorization;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
 
