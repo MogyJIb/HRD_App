@@ -8,6 +8,7 @@ using HRD_App.Errors;
 using HRD_DataLibrary.Errors;
 using HRD_DataLibrary.Models;
 using HRD_DataLibrary.General;
+using Newtonsoft.Json;
 
 namespace HRD_App.Rest
 {
@@ -24,16 +25,15 @@ namespace HRD_App.Rest
         public async Task<AuthSession> Login(Account account)
         {
             HttpResponseMessage response = await httpClient.PostAsJsonAsync<Account>(NAME + "\\login", account);
-
             if (response.IsSuccessStatusCode)
             {
-                AuthSession authSession = await response.Content.ReadAsAsync<AuthSession>();
-                return authSession;
+                string authSessionJson = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<AuthSession>(authSessionJson);
             }
             else
             {
-                Error error = await response.Content.ReadAsAsync<Error>();
-                throw ApiException.Create(error.ErrorType);
+                ErrorType errorType = await response.Content.ReadAsAsync<ErrorType>();
+                throw ApiException.Create(errorType);
             }
         }
     }
