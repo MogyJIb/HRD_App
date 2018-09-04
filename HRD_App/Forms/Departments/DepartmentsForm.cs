@@ -15,6 +15,8 @@ namespace HRD_App.Forms
         public DepartmentsForm()
         {
             InitializeComponent();
+
+            new AuthorizationForm().ShowDialog();
         }
     }
 }

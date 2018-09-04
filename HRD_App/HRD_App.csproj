@@ -110,10 +110,10 @@
     <Compile Include="Forms\AuthorizationForm.designer.cs">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DepartmentsForm.cs">
+    <Compile Include="Forms\Departments\DepartmentsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DepartmentsForm.Designer.cs">
+    <Compile Include="Forms\Departments\DepartmentsForm.Designer.cs">
       <DependentUpon>DepartmentsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HolidaysForm.cs">
@@ -134,10 +134,10 @@
     <Compile Include="Forms\PositionsForm.Designer.cs">
       <DependentUpon>PositionsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UpdateDepartmentsForm.cs">
+    <Compile Include="Forms\Departments\UpdateDepartmentsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\UpdateDepartmentsForm.Designer.cs">
+    <Compile Include="Forms\Departments\UpdateDepartmentsForm.Designer.cs">
       <DependentUpon>UpdateDepartmentsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UpdateEmployeesForm.cs">
@@ -188,12 +188,13 @@
     <Compile Include="Forms\WorkedTimeForm.Designer.cs">
       <DependentUpon>WorkedTimeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rest\AccountService.cs" />
-    <Compile Include="Rest\DepartmentService.cs" />
+    <Compile Include="Rest\Authenticator.cs" />
+    <Compile Include="Rest\Services\AccountService.cs" />
+    <Compile Include="Rest\Services\DepartmentService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rest\IAccountService.cs" />
-    <Compile Include="Rest\IDepartmentService.cs" />
+    <Compile Include="Rest\Interfaces\IAccountService.cs" />
+    <Compile Include="Rest\Interfaces\IDepartmentService.cs" />
     <Compile Include="Rest\RestApi.cs" />
     <EmbeddedResource Include="Forms\EmployeesForm.resx">
       <DependentUpon>EmployeesForm.cs</DependentUpon>
@@ -210,7 +211,7 @@
     <EmbeddedResource Include="Forms\AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DepartmentsForm.resx">
+    <EmbeddedResource Include="Forms\Departments\DepartmentsForm.resx">
       <DependentUpon>DepartmentsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HolidaysForm.resx">
@@ -222,7 +223,7 @@
     <EmbeddedResource Include="Forms\PositionsForm.resx">
       <DependentUpon>PositionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UpdateDepartmentsForm.resx">
+    <EmbeddedResource Include="Forms\Departments\UpdateDepartmentsForm.resx">
       <DependentUpon>UpdateDepartmentsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateEmployeesForm.resx">

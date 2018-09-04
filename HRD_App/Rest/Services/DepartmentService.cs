@@ -8,7 +8,7 @@ using HRD_DataLibrary.Models;
 
 namespace HRD_App.Rest
 {
-    class DepartmentService:IDepartmentService
+    public class DepartmentService:IDepartmentService
     {
         private const string NAME = "departments";
         private HttpClient httpClient;
