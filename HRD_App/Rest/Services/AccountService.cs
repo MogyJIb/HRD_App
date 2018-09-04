@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 namespace HRD_App.Rest
 {
-    class AccountService : IAccountService
+    public class AccountService : IAccountService
     {
         private const string NAME = "accounts";
         private HttpClient httpClient;

@@ -1,4 +1,7 @@
-﻿using HRD_App.Rest;
+﻿using HRD_App.Errors;
+using HRD_App.Forms;
+using HRD_App.Rest;
+using HRD_DataLibrary.Errors;
 using HRD_DataLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -17,6 +20,8 @@ namespace HRD_App
         public AuthorizationForm()
         {
             InitializeComponent();
+            textBox_login.Text = "zhenya";
+            textBox_password.Text = "erika";
         }
         
         private void TextBox_Enter(TextBox textBox)
@@ -84,23 +89,37 @@ namespace HRD_App
 
         private async void button_authorization_Click(object sender, EventArgs e)
         {
-            if (Validate())
-            {
-                IAccountService accountService = new RestApi().AccountService;
-                try
-                {
-                    Account account = new Account();
-                    account.Login = textBox_login.Text;
-                    account.Password = textBox_password.Text;
+            if (!Validate()) return;
 
-                    await accountService.Login(account);
-                    MessageBox.Show("Авторизация выполнена");
-                }
-                catch(Exception exception)
+            try
+            {
+                Account account = new Account();
+                account.Login = textBox_login.Text;
+                account.Password = textBox_password.Text;
+
+                await Authenticator.Login(account);
+                Close();
+            }
+            catch (ApiException exception)
+            {
+                switch(exception.ErrorType)
                 {
-                    Console.WriteLine(exception.StackTrace);
-                    MessageBox.Show(exception.Message);
+                    case ErrorType.NonExistentLogin:
+                        errorProvider.SetError(textBox_login, exception.Message);
+                        break;
+                    case ErrorType.WrongPassword:
+                        errorProvider.SetError(textBox_password, exception.Message);
+                        break;
+                    default:
+                        Console.WriteLine(exception.Message);
+                        Console.WriteLine(exception.StackTrace);
+                        break;
                 }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                Console.WriteLine(exception.StackTrace);
             }
         }
     }

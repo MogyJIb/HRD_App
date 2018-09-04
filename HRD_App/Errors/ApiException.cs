@@ -11,7 +11,7 @@ namespace HRD_App.Errors
     {
         public ErrorType ErrorType { get; }
 
-        public ApiException(ErrorType errorType) : base() { }
+        public ApiException(ErrorType errorType) : base() { ErrorType = errorType; }
         
         public override string Message => "Default API exception";
 

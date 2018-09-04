@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 
 namespace HRD_App.Rest
 {
-    class RestApi
+    public class RestApi
     {
+        private const string SESSION = "session";
         private const string BASE_URL = "http://localhost:54536/api/";
-        private HttpClient httpClient;
+        private static HttpClient httpClient;
 
-        public IAccountService AccountService { get; }
-        public IDepartmentService DepartmentService { get; }
-
-        public RestApi()
+        public static IAccountService AccountService
         {
-            InitHttpClient();
-            this.AccountService = new AccountService(httpClient);
-            this.DepartmentService=new DepartmentService(httpClient);
+            get { return new AccountService(httpClient); }
+        }
+        public static IDepartmentService DepartmentService
+        {
+            get { return new DepartmentService(httpClient); }
         }
 
-        private void InitHttpClient()
+        static RestApi()
         {
             httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(BASE_URL);
@@ -31,6 +31,15 @@ namespace HRD_App.Rest
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
-        
+
+        public static void SetSession(string sessionId)
+        {
+            if (httpClient == null || sessionId == null) return;
+
+            HttpRequestHeaders headers = httpClient.DefaultRequestHeaders;
+            if (headers.Contains(SESSION)) headers.Remove(SESSION);
+
+            headers.Add(SESSION, sessionId);
+        }
     }
 }

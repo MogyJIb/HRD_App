@@ -8,7 +8,7 @@ using HRD_DataLibrary.General;
 
 namespace HRD_App.Rest
 {
-    interface IAccountService
+    public interface IAccountService
     {
         Task<AuthSession> Login(Account account);
     }
