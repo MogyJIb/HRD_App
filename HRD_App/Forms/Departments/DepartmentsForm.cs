@@ -1,4 +1,7 @@
-﻿using System;
+﻿using HRD_App.Errors;
+using HRD_App.Rest;
+using HRD_DataLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +20,25 @@ namespace HRD_App.Forms
             InitializeComponent();
 
             new AuthorizationForm().ShowDialog();
+
+            init();
+        }
+
+        private async void init()
+        {
+            try
+            {
+                var departments = await RestApi.DepartmentService.GetDepartments();
+                MessageBox.Show(string.Join<Department>(",  ", departments.ToArray()));
+            }
+            catch(ApiException exception)
+            {
+                MessageBox.Show(exception.ErrorType + "    " + exception.Message);
+            }
+            catch(Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
         }
     }
 }

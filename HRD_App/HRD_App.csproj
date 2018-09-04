@@ -196,6 +196,7 @@
     <Compile Include="Rest\Interfaces\IAccountService.cs" />
     <Compile Include="Rest\Interfaces\IDepartmentService.cs" />
     <Compile Include="Rest\RestApi.cs" />
+    <Compile Include="Utils\UrlArgsUtil.cs" />
     <EmbeddedResource Include="Forms\EmployeesForm.resx">
       <DependentUpon>EmployeesForm.cs</DependentUpon>
     </EmbeddedResource>
