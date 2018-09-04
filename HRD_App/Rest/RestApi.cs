@@ -13,15 +13,7 @@ namespace HRD_App.Rest
         private const string SESSION = "session";
         private const string BASE_URL = "http://localhost:54536/api/";
         private static HttpClient httpClient;
-
-        public static IAccountService AccountService
-        {
-            get { return new AccountService(httpClient); }
-        }
-        public static IDepartmentService DepartmentService
-        {
-            get { return new DepartmentService(httpClient); }
-        }
+        private static Dictionary<string, string> args = new Dictionary<string, string>();
 
         static RestApi()
         {
@@ -35,11 +27,21 @@ namespace HRD_App.Rest
         public static void SetSession(string sessionId)
         {
             if (httpClient == null || sessionId == null) return;
+            
+            if (args.Keys.Contains(SESSION)) args.Remove(SESSION);
 
-            HttpRequestHeaders headers = httpClient.DefaultRequestHeaders;
-            if (headers.Contains(SESSION)) headers.Remove(SESSION);
-
-            headers.Add(SESSION, sessionId);
+            args.Add(SESSION, sessionId);
         }
+
+        public static IAccountService AccountService
+        {
+            get { return new AccountService(httpClient); }
+        }
+
+        public static IDepartmentService DepartmentService
+        {
+            get { return new DepartmentService(httpClient, args); }
+        }
+
     }
 }

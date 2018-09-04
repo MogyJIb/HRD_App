@@ -27,8 +27,7 @@ namespace HRD_App.Rest
             HttpResponseMessage response = await httpClient.PostAsJsonAsync<Account>(NAME + "\\login", account);
             if (response.IsSuccessStatusCode)
             {
-                string authSessionJson = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<AuthSession>(authSessionJson);
+                return await response.Content.ReadAsAsync<AuthSession>();
             }
             else
             {
