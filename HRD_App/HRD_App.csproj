@@ -189,6 +189,8 @@
       <DependentUpon>WorkedTimeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Rest\Authenticator.cs" />
+    <Compile Include="Rest\IService.cs" />
+    <Compile Include="Rest\Service.cs" />
     <Compile Include="Rest\Services\AccountService.cs" />
     <Compile Include="Rest\Services\DepartmentService.cs" />
     <Compile Include="Program.cs" />
