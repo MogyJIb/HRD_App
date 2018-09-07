@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView_employees = new System.Windows.Forms.DataGridView();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +42,7 @@
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.button_update = new System.Windows.Forms.Button();
             this.button_add = new System.Windows.Forms.Button();
+            this.button_delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_employees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_search)).BeginInit();
             this.SuspendLayout();
@@ -57,15 +58,15 @@
             this.dataGridView_employees.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_employees.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_employees.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_employees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_employees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_employees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_employees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column5,
@@ -74,27 +75,28 @@
             this.Column3,
             this.Column4,
             this.Column6});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_employees.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_employees.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView_employees.EnableHeadersVisualStyles = false;
             this.dataGridView_employees.GridColor = System.Drawing.Color.White;
             this.dataGridView_employees.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dataGridView_employees.Location = new System.Drawing.Point(12, 38);
+            this.dataGridView_employees.Location = new System.Drawing.Point(16, 47);
+            this.dataGridView_employees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView_employees.Name = "dataGridView_employees";
             this.dataGridView_employees.ReadOnly = true;
             this.dataGridView_employees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView_employees.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView_employees.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView_employees.Size = new System.Drawing.Size(709, 307);
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView_employees.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView_employees.Size = new System.Drawing.Size(945, 378);
             this.dataGridView_employees.TabIndex = 0;
             // 
             // Column5
@@ -136,18 +138,20 @@
             // pictureBox_search
             // 
             this.pictureBox_search.Image = global::HRD_App.Properties.Resources.search_48835;
-            this.pictureBox_search.Location = new System.Drawing.Point(705, 13);
+            this.pictureBox_search.Location = new System.Drawing.Point(940, 16);
+            this.pictureBox_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox_search.Name = "pictureBox_search";
-            this.pictureBox_search.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox_search.Size = new System.Drawing.Size(21, 20);
             this.pictureBox_search.TabIndex = 17;
             this.pictureBox_search.TabStop = false;
             // 
             // textBox_search
             // 
             this.textBox_search.ForeColor = System.Drawing.Color.Gray;
-            this.textBox_search.Location = new System.Drawing.Point(586, 12);
+            this.textBox_search.Location = new System.Drawing.Point(781, 15);
+            this.textBox_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_search.Name = "textBox_search";
-            this.textBox_search.Size = new System.Drawing.Size(136, 20);
+            this.textBox_search.Size = new System.Drawing.Size(180, 22);
             this.textBox_search.TabIndex = 16;
             this.textBox_search.Text = "Поиск";
             // 
@@ -161,9 +165,10 @@
             this.button_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_update.ForeColor = System.Drawing.Color.White;
-            this.button_update.Location = new System.Drawing.Point(178, 351);
+            this.button_update.Location = new System.Drawing.Point(237, 432);
+            this.button_update.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_update.Name = "button_update";
-            this.button_update.Size = new System.Drawing.Size(160, 29);
+            this.button_update.Size = new System.Drawing.Size(213, 36);
             this.button_update.TabIndex = 15;
             this.button_update.Text = "Редактировать";
             this.button_update.UseVisualStyleBackColor = false;
@@ -178,23 +183,45 @@
             this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_add.ForeColor = System.Drawing.Color.White;
-            this.button_add.Location = new System.Drawing.Point(12, 351);
+            this.button_add.Location = new System.Drawing.Point(16, 432);
+            this.button_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(160, 29);
+            this.button_add.Size = new System.Drawing.Size(213, 36);
             this.button_add.TabIndex = 14;
             this.button_add.Text = "Добавить";
             this.button_add.UseVisualStyleBackColor = false;
             // 
+            // button_delete
+            // 
+            this.button_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button_delete.BackColor = System.Drawing.Color.CadetBlue;
+            this.button_delete.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.button_delete.FlatAppearance.BorderSize = 0;
+            this.button_delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.button_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_delete.ForeColor = System.Drawing.Color.White;
+            this.button_delete.Location = new System.Drawing.Point(458, 433);
+            this.button_delete.Margin = new System.Windows.Forms.Padding(4);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(213, 36);
+            this.button_delete.TabIndex = 19;
+            this.button_delete.Text = "Удалить";
+            this.button_delete.UseVisualStyleBackColor = false;
+            // 
             // PositionsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 392);
+            this.ClientSize = new System.Drawing.Size(979, 482);
+            this.Controls.Add(this.button_delete);
             this.Controls.Add(this.pictureBox_search);
             this.Controls.Add(this.textBox_search);
             this.Controls.Add(this.button_update);
             this.Controls.Add(this.button_add);
             this.Controls.Add(this.dataGridView_employees);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PositionsForm";
             this.Text = "Должности";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_employees)).EndInit();
@@ -216,5 +243,6 @@
         private System.Windows.Forms.TextBox textBox_search;
         private System.Windows.Forms.Button button_update;
         private System.Windows.Forms.Button button_add;
+        private System.Windows.Forms.Button button_delete;
     }
 }

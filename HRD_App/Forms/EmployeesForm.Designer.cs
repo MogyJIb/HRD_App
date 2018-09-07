@@ -46,6 +46,7 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.pictureBox_search = new System.Windows.Forms.PictureBox();
+            this.button_delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_employees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_search)).BeginInit();
             this.SuspendLayout();
@@ -60,9 +61,10 @@
             this.button_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_update.ForeColor = System.Drawing.Color.White;
-            this.button_update.Location = new System.Drawing.Point(177, 351);
+            this.button_update.Location = new System.Drawing.Point(236, 432);
+            this.button_update.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_update.Name = "button_update";
-            this.button_update.Size = new System.Drawing.Size(160, 29);
+            this.button_update.Size = new System.Drawing.Size(213, 36);
             this.button_update.TabIndex = 11;
             this.button_update.Text = "Редактировать";
             this.button_update.UseVisualStyleBackColor = false;
@@ -77,9 +79,10 @@
             this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_add.ForeColor = System.Drawing.Color.White;
-            this.button_add.Location = new System.Drawing.Point(11, 351);
+            this.button_add.Location = new System.Drawing.Point(15, 432);
+            this.button_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(160, 29);
+            this.button_add.Size = new System.Drawing.Size(213, 36);
             this.button_add.TabIndex = 10;
             this.button_add.Text = "Добавить";
             this.button_add.UseVisualStyleBackColor = false;
@@ -126,7 +129,8 @@
             this.dataGridView_employees.EnableHeadersVisualStyles = false;
             this.dataGridView_employees.GridColor = System.Drawing.Color.White;
             this.dataGridView_employees.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dataGridView_employees.Location = new System.Drawing.Point(11, 38);
+            this.dataGridView_employees.Location = new System.Drawing.Point(15, 47);
+            this.dataGridView_employees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView_employees.Name = "dataGridView_employees";
             this.dataGridView_employees.ReadOnly = true;
             this.dataGridView_employees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -135,7 +139,7 @@
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView_employees.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView_employees.Size = new System.Drawing.Size(710, 307);
+            this.dataGridView_employees.Size = new System.Drawing.Size(947, 378);
             this.dataGridView_employees.TabIndex = 0;
             // 
             // Column5
@@ -201,31 +205,54 @@
             // textBox_search
             // 
             this.textBox_search.ForeColor = System.Drawing.Color.Gray;
-            this.textBox_search.Location = new System.Drawing.Point(586, 12);
+            this.textBox_search.Location = new System.Drawing.Point(781, 15);
+            this.textBox_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_search.Name = "textBox_search";
-            this.textBox_search.Size = new System.Drawing.Size(136, 20);
+            this.textBox_search.Size = new System.Drawing.Size(180, 22);
             this.textBox_search.TabIndex = 12;
             this.textBox_search.Text = "Поиск";
             // 
             // pictureBox_search
             // 
             this.pictureBox_search.Image = global::HRD_App.Properties.Resources.search_48835;
-            this.pictureBox_search.Location = new System.Drawing.Point(705, 13);
+            this.pictureBox_search.Location = new System.Drawing.Point(940, 16);
+            this.pictureBox_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox_search.Name = "pictureBox_search";
-            this.pictureBox_search.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox_search.Size = new System.Drawing.Size(21, 20);
             this.pictureBox_search.TabIndex = 13;
             this.pictureBox_search.TabStop = false;
             // 
+            // button_delete
+            // 
+            this.button_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button_delete.BackColor = System.Drawing.Color.CadetBlue;
+            this.button_delete.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.button_delete.FlatAppearance.BorderSize = 0;
+            this.button_delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.button_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_delete.ForeColor = System.Drawing.Color.White;
+            this.button_delete.Location = new System.Drawing.Point(457, 433);
+            this.button_delete.Margin = new System.Windows.Forms.Padding(4);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(213, 36);
+            this.button_delete.TabIndex = 19;
+            this.button_delete.Text = "Удалить";
+            this.button_delete.UseVisualStyleBackColor = false;
+            // 
             // EmployeesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 392);
+            this.ClientSize = new System.Drawing.Size(979, 482);
+            this.Controls.Add(this.button_delete);
             this.Controls.Add(this.pictureBox_search);
             this.Controls.Add(this.textBox_search);
             this.Controls.Add(this.dataGridView_employees);
             this.Controls.Add(this.button_update);
             this.Controls.Add(this.button_add);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EmployeesForm";
             this.Text = "Сотрудники";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_employees)).EndInit();
@@ -252,5 +279,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.PictureBox pictureBox_search;
         private System.Windows.Forms.TextBox textBox_search;
+        private System.Windows.Forms.Button button_delete;
     }
 }
