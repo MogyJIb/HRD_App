@@ -7,8 +7,5 @@ using HRD_DataLibrary.Models;
 
 namespace HRD_App.Rest
 {
-    public interface IDepartmentService
-    {
-        Task<List<Department>> GetDepartments();
-    }
+    public interface IDepartmentService : IService<Department> { }
 }

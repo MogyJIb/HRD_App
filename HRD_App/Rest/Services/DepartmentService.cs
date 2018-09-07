@@ -11,31 +11,11 @@ using HRD_DataLibrary.Models;
 
 namespace HRD_App.Rest
 {
-    public class DepartmentService:IDepartmentService
+    public class DepartmentService : Service<Department>, IDepartmentService
     {
-        private const string NAME = "departments";
-        private HttpClient httpClient;
-        private Dictionary<string, string> args;
+        public const string NAME = "departments";
 
-        public DepartmentService(HttpClient httpClient, Dictionary<string, string> args)
-        {
-            this.httpClient = httpClient;
-            this.args = args;
-        }
-
-        public async Task<List<Department>> GetDepartments()
-        {
-            HttpResponseMessage response = await httpClient.GetAsync(NAME + "?" + UrlArgsUtil.makeArgs(args));
-
-            if (response.IsSuccessStatusCode)
-            {
-                return await response.Content.ReadAsAsync<List<Department>>();
-            }
-            else
-            {
-                ErrorType errorType = await response.Content.ReadAsAsync<ErrorType>();
-                throw ApiException.Create(errorType);
-            }
-        }
+        public DepartmentService(HttpClient httpClient, Dictionary<string, string> args) 
+            : base(NAME, httpClient, args) { }
     }
 }
