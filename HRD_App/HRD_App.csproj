@@ -199,6 +199,7 @@
     <Compile Include="Rest\Interfaces\IDepartmentService.cs" />
     <Compile Include="Rest\RestApi.cs" />
     <Compile Include="Utils\UrlArgsUtil.cs" />
+    <Compile Include="Utils\OnValueChangedListener.cs" />
     <EmbeddedResource Include="Forms\EmployeesForm.resx">
       <DependentUpon>EmployeesForm.cs</DependentUpon>
     </EmbeddedResource>

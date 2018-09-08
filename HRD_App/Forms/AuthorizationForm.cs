@@ -118,6 +118,7 @@ namespace HRD_App
             }
             catch (Exception exception)
             {
+                MessageBox.Show(exception.Message);
                 Console.WriteLine(exception.Message);
                 Console.WriteLine(exception.StackTrace);
             }
