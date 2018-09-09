@@ -22,10 +22,10 @@ namespace HRD_App.Forms
 
             new AuthorizationForm().ShowDialog();
 
-            init();
+            AddDepartments();
         }
 
-        private void init()
+        private void AddDepartments()
         {
             try
             {
@@ -34,16 +34,7 @@ namespace HRD_App.Forms
 
                 dataGridView_departments.Rows.Clear();
                 foreach (Department department in departments)
-                {
-                    dataGridView_departments.Rows.Add(
-                            new object[]
-                            {
-                                department.DepartmentId,
-                                department.Name,
-                                department.Cabinet,
-                                department.Phone
-                            });
-                }
+                    AddDepartment(department);
             }
             catch (Exception exception)
             {
@@ -52,33 +43,53 @@ namespace HRD_App.Forms
             }
         }
 
+        private void AddDepartment(Department department)
+        {
+            dataGridView_departments.Rows.Add(
+                           new object[]
+                           {
+                                department.DepartmentId,
+                                department.Name,
+                                department.Cabinet,
+                                department.Phone
+                           });
+        }
+
+        private void UpdateDepartment(Department department, int row)
+        {
+            dataGridView_departments.Rows.RemoveAt(row);
+            dataGridView_departments.Rows.Insert(row, 
+                           new object[]
+                           {
+                                department.DepartmentId,
+                                department.Name,
+                                department.Cabinet,
+                                department.Phone
+                           });
+        }
+
         private void button_update_Click(object sender, EventArgs e)
         {
             int row = dataGridView_departments.CurrentRow.Index;
             int id = (int)dataGridView_departments[0, row].Value;
             new UpdateDepartmentsForm(id, true)
-                //.SetOnValueChangedListener(department => updateDepartment(department))
+                .SetOnValueChangedListener(department => UpdateDepartment(department, row))
                 .ShowDialog();
         }
 
-        private void button_delete_Click(object sender, EventArgs e)
+        private async void button_delete_Click(object sender, EventArgs e)
         {
             int row = dataGridView_departments.CurrentRow.Index;
             int id = (int)dataGridView_departments[0, row].Value;
-            RestApi.DepartmentService.Delete(id);
+            await RestApi.DepartmentService.Delete(id);
             dataGridView_departments.Rows.RemoveAt(row);
         }
 
-        private void button_add_Click(object sender, EventArgs e)
+        private async void button_add_Click(object sender, EventArgs e)
         {
             new UpdateDepartmentsForm(-1, true)
-                //.SetOnValueChangedListener(department => updateDepartment(department))
+                .SetOnValueChangedListener(department => AddDepartment(department))
                 .ShowDialog();
-        }
-
-        private void updateDepartment(Department department)
-        {
-
         }
     }
 }

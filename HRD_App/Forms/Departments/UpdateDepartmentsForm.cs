@@ -1,4 +1,5 @@
 ﻿using HRD_App.Errors;
+using HRD_App.Logic;
 using HRD_App.Rest;
 using HRD_App.Utils;
 using HRD_DataLibrary.Errors;
@@ -18,19 +19,20 @@ namespace HRD_App.Forms
     public partial class UpdateDepartmentsForm : Form
     {
         private Department department;
-        Func<Department> valueChangedListener;
+        private event OnValueChangedListener<Department> OnValueChanged;
 
         public UpdateDepartmentsForm(int departmentId, bool enabled)
         {
             InitializeComponent();
 
             setFieldsEnabled(enabled);
-            setDepartment(departmentId);
+
+            if (departmentId != -1) setDepartment(departmentId);
         }
 
-        public UpdateDepartmentsForm SetOnValueChangedListener(Func<Department> valueChangedListener)
+        public UpdateDepartmentsForm SetOnValueChangedListener(OnValueChangedListener<Department> listener)
         {
-            this.valueChangedListener = valueChangedListener;
+            this.OnValueChanged += listener;
             return this;
         }
 
@@ -42,13 +44,11 @@ namespace HRD_App.Forms
             textBox_name.Enabled = enabled;
         }
 
-        private void setDepartment(int departmentId)
+        private async void setDepartment(int departmentId)
         {
-            if (departmentId == -1) return;
-
             try
             {
-                department = RestApi.DepartmentService.Get(departmentId).Result;
+                department = await RestApi.DepartmentService.Get(departmentId);
 
                 textBox_id.Text = department.DepartmentId.ToString();
                 maskedTextBox_phone.Text = department.Phone;
@@ -63,20 +63,28 @@ namespace HRD_App.Forms
             }
         }
 
-        private void button_save_Click(object sender, EventArgs e)
+        private async void button_save_Click(object sender, EventArgs e)
         {
             if (!Validate()) return;
 
             try
             {
                 Department department = new Department();
-                if (textBox_id.Text != "") department.DepartmentId = Int32.Parse(textBox_id.Text);
                 department.Name = textBox_name.Text;
                 department.Cabinet = Int32.Parse(textBox_cabinet.Text);
                 department.Phone = maskedTextBox_phone.Text;
 
-                RestApi.DepartmentService.Add(department);
+                int id = (textBox_id.Text != "") ? Int32.Parse(textBox_id.Text) : -1;
+                if (id == -1)
+                    department = await RestApi.DepartmentService.Add(department);
+                else
+                {
+                    department.DepartmentId = id;
+                    await RestApi.DepartmentService.Update(id, department);
+                }
                 MessageBox.Show("Запись успешно сохранена!");
+
+                OnValueChanged(department);
                 Close();
             }
             catch (Exception exception)

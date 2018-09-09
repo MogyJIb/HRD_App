@@ -188,6 +188,7 @@
     <Compile Include="Forms\WorkedTimeForm.Designer.cs">
       <DependentUpon>WorkedTimeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\OnValueChangedListener.cs" />
     <Compile Include="Rest\Authenticator.cs" />
     <Compile Include="Rest\IService.cs" />
     <Compile Include="Rest\Service.cs" />
@@ -199,7 +200,6 @@
     <Compile Include="Rest\Interfaces\IDepartmentService.cs" />
     <Compile Include="Rest\RestApi.cs" />
     <Compile Include="Utils\UrlArgsUtil.cs" />
-    <Compile Include="Utils\OnValueChangedListener.cs" />
     <EmbeddedResource Include="Forms\EmployeesForm.resx">
       <DependentUpon>EmployeesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,5 +287,6 @@
   <ItemGroup>
     <None Include="Resources\2,.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
