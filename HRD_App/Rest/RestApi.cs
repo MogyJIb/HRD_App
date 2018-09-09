@@ -1,4 +1,5 @@
-﻿using HRD_DataLibrary.Models;
+﻿using HRD_App.Rest.Services;
+using HRD_DataLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,9 +40,44 @@ namespace HRD_App.Rest
             get { return new AccountService(httpClient); }
         }
 
+        public static IEmployeeService EmployeeService
+        {
+            get { return new EmployeeService(httpClient, args); }
+        }
+
+        public static IHolidayService HolidayService
+        {
+            get { return new HolidayService(httpClient, args); }
+        }
+
+        public static IPositionService PositionService
+        {
+            get { return new PositionService(httpClient, args); }
+        }
+
+        public static IVacancyService VacancyService
+        {
+            get { return new VacancyService(httpClient, args); }
+        }
+
+        public static IWorkedTimeService WorkedTimeService
+        {
+            get { return new WorkedTimeService(httpClient, args); }
+        }
+
         public static IDepartmentService DepartmentService
         {
             get { return new DepartmentService(httpClient, args); }
+        }
+
+        public static IResumeService ResumeService
+        {
+            get { return new ResumeService(httpClient, args); }
+        }
+
+        public static IRewardService RewardService
+        {
+            get { return new RewardService(httpClient, args); }
         }
 
     }

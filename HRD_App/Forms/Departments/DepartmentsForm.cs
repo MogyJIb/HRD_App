@@ -90,8 +90,8 @@ namespace HRD_App.Forms
             if (departments.Count < 1) return;
 
             int row = dataGridView_departments.CurrentRow.Index;
-            int id = (int )dataGridView_departments[0, row].Value;
-            
+            int id = (int)dataGridView_departments[0, row].Value;
+
             try
             {
                 Department department = await RestApi.DepartmentService.Delete(id);
@@ -125,15 +125,33 @@ namespace HRD_App.Forms
         private void Filter()
         {
             string pattern = textBox_search.Text;
-            if (pattern == "")
+            if (pattern == "" || pattern == "Поиск")
                 dataGridView_departments.DataSource = departments;
             else
-                dataGridView_departments.DataSource = 
-                    departments.Where(d => d.DepartmentId.ToString().Contains(pattern) 
+                dataGridView_departments.DataSource =
+                    departments.Where(d => d.DepartmentId.ToString().Contains(pattern)
                                                 || d.Name.Contains(pattern)
                                                 || d.Phone.Contains(pattern)
                                                 || d.Cabinet.ToString().Contains(pattern)
                                 ).ToList();
+        }
+
+
+        private void textBox_search_Enter(object sender, EventArgs e)
+        {
+            if (textBox_search.ForeColor == Color.Black)
+                return;
+            textBox_search.Text = "";
+            textBox_search.ForeColor = Color.Black;
+        }
+
+        private void textBox_search_Leave(object sender, EventArgs e)
+        {
+            if (textBox_search.Text == "")
+            {
+                textBox_search.ForeColor = Color.Gray;
+                textBox_search.Text = "Поиск";
+            }
         }
     }
 }

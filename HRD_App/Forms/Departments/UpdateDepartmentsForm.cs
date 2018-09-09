@@ -98,32 +98,35 @@ namespace HRD_App.Forms
         private bool Validate()
         {
             bool isValid = true;
-            // TODO errorProvider.Clear();
+            errorProvider.Clear();
 
             if (maskedTextBox_phone.Text == "")
             {
-                // TODO errorProvider.SetError(textBox_login, "Поле обязательно для заполнения!");
-                MessageBox.Show("Поле обязательно для заполнения!");
+                errorProvider.SetError(maskedTextBox_phone, "Поле обязательно для заполнения!");
+                isValid = false;
+            }
+            
+            if (textBox_name.Text == "")
+            {
+                errorProvider.SetError(textBox_name, "Поле обязательно для заполнения!");
                 isValid = false;
             }
 
+            if (textBox_cabinet.Text == "")
+            {
+                errorProvider.SetError(textBox_cabinet, "Поле обязательно для заполнения!");
+                isValid = false;
+            }
             try
             {
                 Int32.Parse(textBox_cabinet.Text);
             }
             catch(Exception exception)
             {
-                MessageBox.Show("Поле обязательно для заполнения!");
+                MessageBox.Show("Неверный формат!");
                 isValid = false;
             }
-
-            if (textBox_name.Text == "")
-            {
-                // TODO errorProvider.SetError(textBox_password, "Поле обязательно для заполнения!");
-                MessageBox.Show("Поле обязательно для заполнения!");
-                isValid = false;
-            }
-
+            
             return isValid;
         }
     }
