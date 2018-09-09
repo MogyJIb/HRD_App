@@ -60,6 +60,16 @@ namespace HRD_App.Forms
             oldDepartment.Phone = newDepartment.Phone;
         }
 
+        private void DeleteDepartment(Department department)
+        {
+            department = departments
+                    .Where(d => d.DepartmentId == department.DepartmentId)
+                    .FirstOrDefault();
+
+            if (department != null)
+                departments.Remove(department);
+        }
+
         private void button_update_Click(object sender, EventArgs e)
         {
             if (departments.Count < 1) return;
@@ -81,10 +91,19 @@ namespace HRD_App.Forms
 
             int row = dataGridView_departments.CurrentRow.Index;
             int id = (int )dataGridView_departments[0, row].Value;
-
-            Department department = await RestApi.DepartmentService.Delete(id);
-            departments.Remove(department);
-            Filter();
+            
+            try
+            {
+                Department department = await RestApi.DepartmentService.Delete(id);
+                DeleteDepartment(department);
+                Filter();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+                Console.WriteLine(exception.Message);
+                Console.WriteLine(exception.StackTrace);
+            }
         }
 
         private async void button_add_Click(object sender, EventArgs e)
