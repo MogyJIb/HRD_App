@@ -32,15 +32,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView_departments = new System.Windows.Forms.DataGridView();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox_search = new System.Windows.Forms.PictureBox();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.button_update = new System.Windows.Forms.Button();
             this.button_add = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
+            this.pictureBox_search = new System.Windows.Forms.PictureBox();
+            this.DepartmentIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CabinetColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_departments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_search)).BeginInit();
             this.SuspendLayout();
@@ -69,10 +69,10 @@
             this.dataGridView_departments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_departments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_departments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column5,
-            this.Column1,
-            this.Column2,
-            this.Column3});
+            this.DepartmentIdColumn,
+            this.NameColumn,
+            this.CabinetColumn,
+            this.PhoneColumn});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -97,51 +97,17 @@
             this.dataGridView_departments.Size = new System.Drawing.Size(945, 378);
             this.dataGridView_departments.TabIndex = 0;
             // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Код";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Название";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Кабинет";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Телефон";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // pictureBox_search
-            // 
-            this.pictureBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox_search.Image = global::HRD_App.Properties.Resources.search_48835;
-            this.pictureBox_search.Location = new System.Drawing.Point(940, 16);
-            this.pictureBox_search.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox_search.Name = "pictureBox_search";
-            this.pictureBox_search.Size = new System.Drawing.Size(21, 20);
-            this.pictureBox_search.TabIndex = 17;
-            this.pictureBox_search.TabStop = false;
-            // 
             // textBox_search
             // 
             this.textBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_search.ForeColor = System.Drawing.Color.Gray;
-            this.textBox_search.Location = new System.Drawing.Point(781, 15);
+            this.textBox_search.Location = new System.Drawing.Point(632, 17);
             this.textBox_search.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_search.Name = "textBox_search";
-            this.textBox_search.Size = new System.Drawing.Size(180, 22);
+            this.textBox_search.Size = new System.Drawing.Size(328, 22);
             this.textBox_search.TabIndex = 16;
             this.textBox_search.Text = "Поиск";
+            this.textBox_search.TextChanged += new System.EventHandler(this.textBox_search_TextChanged);
             // 
             // button_update
             // 
@@ -203,6 +169,47 @@
             this.button_delete.UseVisualStyleBackColor = false;
             this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
+            // pictureBox_search
+            // 
+            this.pictureBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox_search.BackColor = System.Drawing.Color.CadetBlue;
+            this.pictureBox_search.Image = global::HRD_App.Properties.Resources.baseline_search_white_18dp;
+            this.pictureBox_search.Location = new System.Drawing.Point(923, 19);
+            this.pictureBox_search.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox_search.Name = "pictureBox_search";
+            this.pictureBox_search.Size = new System.Drawing.Size(38, 22);
+            this.pictureBox_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_search.TabIndex = 17;
+            this.pictureBox_search.TabStop = false;
+            // 
+            // DepartmentIdColumn
+            // 
+            this.DepartmentIdColumn.DataPropertyName = "DepartmentId";
+            this.DepartmentIdColumn.HeaderText = "Код";
+            this.DepartmentIdColumn.Name = "DepartmentIdColumn";
+            this.DepartmentIdColumn.ReadOnly = true;
+            // 
+            // NameColumn
+            // 
+            this.NameColumn.DataPropertyName = "Name";
+            this.NameColumn.HeaderText = "Название";
+            this.NameColumn.Name = "NameColumn";
+            this.NameColumn.ReadOnly = true;
+            // 
+            // CabinetColumn
+            // 
+            this.CabinetColumn.DataPropertyName = "Cabinet";
+            this.CabinetColumn.HeaderText = "Кабинет";
+            this.CabinetColumn.Name = "CabinetColumn";
+            this.CabinetColumn.ReadOnly = true;
+            // 
+            // PhoneColumn
+            // 
+            this.PhoneColumn.DataPropertyName = "Phone";
+            this.PhoneColumn.HeaderText = "Телефон";
+            this.PhoneColumn.Name = "PhoneColumn";
+            this.PhoneColumn.ReadOnly = true;
+            // 
             // DepartmentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -227,14 +234,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView_departments;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.PictureBox pictureBox_search;
         private System.Windows.Forms.TextBox textBox_search;
         private System.Windows.Forms.Button button_update;
         private System.Windows.Forms.Button button_add;
         private System.Windows.Forms.Button button_delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DepartmentIdColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CabinetColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneColumn;
     }
 }

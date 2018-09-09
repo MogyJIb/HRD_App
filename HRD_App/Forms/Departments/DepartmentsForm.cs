@@ -16,80 +16,105 @@ namespace HRD_App.Forms
 {
     public partial class DepartmentsForm : Form
     {
+        private BindingList<Department> departments;
+
         public DepartmentsForm()
         {
             InitializeComponent();
 
             new AuthorizationForm().ShowDialog();
 
-            AddDepartments();
+            init();
         }
 
-        private void AddDepartments()
+        public void init()
         {
-            try
-            {
-                var departments = RestApi.DepartmentService.GetAll(false).Result;
-                departments = departments.OrderBy(t => t.Name).ToList();
+            departments = new BindingList<Department>();
+            dataGridView_departments.DataSource = departments;
+            dataGridView_departments.Columns["Deleted"].Visible = false;
 
-                dataGridView_departments.Rows.Clear();
-                foreach (Department department in departments)
-                    AddDepartment(department);
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-                Console.WriteLine(exception.Message);
-            }
+
+            AddDepartments(RestApi.DepartmentService.GetAll(false).Result);
+            dataGridView_departments.Refresh();
         }
 
-        private void AddDepartment(Department department)
+        private void AddDepartments(List<Department> departments)
         {
-            dataGridView_departments.Rows.Add(
-                           new object[]
-                           {
-                                department.DepartmentId,
-                                department.Name,
-                                department.Cabinet,
-                                department.Phone
-                           });
+            departments
+                    .OrderBy(t => t.DepartmentId)
+                    .ToList()
+                    .ForEach(d => this.departments.Add(d));
         }
 
-        private void UpdateDepartment(Department department, int row)
+        private void UpdateDepartment(Department newDepartment)
         {
-            dataGridView_departments.Rows.RemoveAt(row);
-            dataGridView_departments.Rows.Insert(row, 
-                           new object[]
-                           {
-                                department.DepartmentId,
-                                department.Name,
-                                department.Cabinet,
-                                department.Phone
-                           });
+            Department oldDepartment = departments
+                .Where(d => d.DepartmentId == newDepartment.DepartmentId)
+                .FirstOrDefault();
+
+            if (oldDepartment == null) return;
+
+            oldDepartment.Cabinet = newDepartment.Cabinet;
+            oldDepartment.Deleted = newDepartment.Deleted;
+            oldDepartment.Name = newDepartment.Name;
+            oldDepartment.Phone = newDepartment.Phone;
         }
 
         private void button_update_Click(object sender, EventArgs e)
         {
+            if (departments.Count < 1) return;
+
             int row = dataGridView_departments.CurrentRow.Index;
             int id = (int)dataGridView_departments[0, row].Value;
             new UpdateDepartmentsForm(id, true)
-                .SetOnValueChangedListener(department => UpdateDepartment(department, row))
+                .SetOnValueChangedListener(department =>
+                {
+                    UpdateDepartment(department);
+                    Filter();
+                })
                 .ShowDialog();
         }
 
         private async void button_delete_Click(object sender, EventArgs e)
         {
+            if (departments.Count < 1) return;
+
             int row = dataGridView_departments.CurrentRow.Index;
-            int id = (int)dataGridView_departments[0, row].Value;
-            await RestApi.DepartmentService.Delete(id);
-            dataGridView_departments.Rows.RemoveAt(row);
+            int id = (int )dataGridView_departments[0, row].Value;
+
+            Department department = await RestApi.DepartmentService.Delete(id);
+            departments.Remove(department);
+            Filter();
         }
 
         private async void button_add_Click(object sender, EventArgs e)
         {
             new UpdateDepartmentsForm(-1, true)
-                .SetOnValueChangedListener(department => AddDepartment(department))
+                .SetOnValueChangedListener(department =>
+                {
+                    departments.Add(department);
+                    Filter();
+                })
                 .ShowDialog();
+        }
+
+        private async void textBox_search_TextChanged(object sender, EventArgs e)
+        {
+            Filter();
+        }
+
+        private void Filter()
+        {
+            string pattern = textBox_search.Text;
+            if (pattern == "")
+                dataGridView_departments.DataSource = departments;
+            else
+                dataGridView_departments.DataSource = 
+                    departments.Where(d => d.DepartmentId.ToString().Contains(pattern) 
+                                                || d.Name.Contains(pattern)
+                                                || d.Phone.Contains(pattern)
+                                                || d.Cabinet.ToString().Contains(pattern)
+                                ).ToList();
         }
     }
 }
