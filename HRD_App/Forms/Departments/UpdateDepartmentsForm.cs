@@ -26,7 +26,7 @@ namespace HRD_App.Forms
             InitializeComponent();
 
             setFieldsEnabled(enabled);
-
+            
             if (departmentId != -1) setDepartment(departmentId);
         }
 

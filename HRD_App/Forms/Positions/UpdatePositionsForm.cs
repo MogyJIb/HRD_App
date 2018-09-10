@@ -18,6 +18,7 @@ namespace HRD_App.Forms
 {
     public partial class UpdatePositionsForm : Form
     {
+        private Dictionary<int, Department> departments;
         private Position position;
         private event OnValueChangedListener<Position> OnValueChanged;
 
@@ -27,6 +28,9 @@ namespace HRD_App.Forms
 
             setFieldsEnabled(enabled);
 
+            departments = new Dictionary<int, Department>();
+            loadDepartmentsList(departments);
+
             if (positionId != -1) setPosition(positionId);
         }
 
@@ -34,6 +38,12 @@ namespace HRD_App.Forms
         {
             this.OnValueChanged += listener;
             return this;
+        }
+
+        private async void loadDepartmentsList(Dictionary<int, Department> departments)
+        {
+            (await RestApi.DepartmentService.GetAll(false)).ForEach(d =>  departments.Add(d.DepartmentId, d));
+            comboBox_department.Items.AddRange(departments.Values.Select(d => d.Name).ToArray());
         }
 
         private void setFieldsEnabled(bool enabled)
@@ -73,9 +83,11 @@ namespace HRD_App.Forms
 
             try
             {
+                Department department = departments.Values.First(d => d.Name == comboBox_department.Text);
+
                 Position position = new Position();
                 position.Name = textBox_name.Text;
-                position.DepartmentId = Int32.Parse(comboBox_department.Text);
+                position.DepartmentId = department.DepartmentId;
                 position.Duties = textBox_duties.Text;
                 position.Salary = Double.Parse(textBox_salary.Text);
                 position.Requirements = textBox_requirements.Text;
@@ -87,6 +99,7 @@ namespace HRD_App.Forms
                 {
                     position.PositionId = id;
                     await RestApi.PositionService.Update(id, position);
+                    position.Department = department;
                 }
                 MessageBox.Show("Запись успешно сохранена!");
 

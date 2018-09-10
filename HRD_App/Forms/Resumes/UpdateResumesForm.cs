@@ -18,6 +18,7 @@ namespace HRD_App.Forms
 {
     public partial class UpdateResumesForm : Form
     {
+        private Dictionary<int, Vacancy> vacancies;
         private Resume resume;
         private event OnValueChangedListener<Resume> OnValueChanged;
 
@@ -27,6 +28,9 @@ namespace HRD_App.Forms
 
             setFieldsEnabled(enabled);
 
+            vacancies = new Dictionary<int, Vacancy>();
+            loadVacanciesList(vacancies);
+
             if (resumeId != -1) setResume(resumeId);
         }
 
@@ -34,6 +38,12 @@ namespace HRD_App.Forms
         {
             this.OnValueChanged += listener;
             return this;
+        }
+
+        private async void loadVacanciesList(Dictionary<int, Vacancy> vacancies)
+        {
+            (await RestApi.VacancyService.GetAll(false)).ForEach(d => vacancies.Add(d.VacancyId, d));
+            comboBox_vacancy.Items.AddRange(vacancies.Values.Select(d => d.Position.Name).ToArray());
         }
 
         private void setFieldsEnabled(bool enabled)
@@ -58,7 +68,7 @@ namespace HRD_App.Forms
                 resume = await RestApi.ResumeService.Get(resumeId);
 
                 textBox_id.Text = resume.ResumeId.ToString();
-                comboBox_vacancy.Text = resume.VacancyId.ToString();
+                comboBox_vacancy.Text = resume.Vacancy.Position.Name.ToString();
                 textBox_firstName.Text = resume.FirstName;
                 textBox_lastName.Text = resume.LastName;
                 textBox_patronymic.Text = resume.Patronymic;
@@ -83,8 +93,10 @@ namespace HRD_App.Forms
 
             try
             {
+                Vacancy vacancy = vacancies.Values.First(d => d.Position.Name == comboBox_vacancy.Text);
+
                 Resume resume = new Resume();
-                resume.VacancyId = Int32.Parse(comboBox_vacancy.Text);
+                resume.VacancyId = vacancy.VacancyId;
                 resume.FirstName = textBox_firstName.Text;
                 resume.LastName = textBox_lastName.Text;
                 resume.Patronymic = textBox_patronymic.Text;
@@ -102,6 +114,7 @@ namespace HRD_App.Forms
                 {
                     resume.ResumeId = id;
                     await RestApi.ResumeService.Update(id, resume);
+                    resume.Vacancy = vacancy;
                 }
                 MessageBox.Show("Запись успешно сохранена!");
 

@@ -32,6 +32,8 @@ namespace HRD_App.Forms
             workedTimes = new BindingList<WorkedTime>();
             dataGridView_workedTimes.DataSource = workedTimes;
             dataGridView_workedTimes.Columns["Deleted"].Visible = false;
+            dataGridView_workedTimes.Columns["Employee"].Visible = false;
+            dataGridView_workedTimes.Columns["EmployeeId"].Visible = false;
 
 
             AddWorkedTimes(RestApi.WorkedTimeService.GetAll(false).Result);
@@ -135,6 +137,7 @@ namespace HRD_App.Forms
             else
                 dataGridView_workedTimes.DataSource =
                     workedTimes.Where(d => d.WorkedTimeId.ToString().Contains(pattern)
+                                                || d.EmployeeId.ToString().Contains(pattern)
                                                 || d.Date.ToString().Contains(pattern)
                                                 || d.ArrivalTime.ToString().Contains(pattern)
                                                 || d.LeavingTime.ToString().Contains(pattern)

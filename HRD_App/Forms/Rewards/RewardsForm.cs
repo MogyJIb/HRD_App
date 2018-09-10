@@ -32,6 +32,8 @@ namespace HRD_App.Forms
             rewards = new BindingList<Reward>();
             dataGridView_rewards.DataSource = rewards;
             dataGridView_rewards.Columns["Deleted"].Visible = false;
+            dataGridView_rewards.Columns["Employee"].Visible = false;
+            dataGridView_rewards.Columns["EmployeeId"].Visible = false;
 
 
             AddRewards(RestApi.RewardService.GetAll(false).Result);
@@ -135,6 +137,7 @@ namespace HRD_App.Forms
             else
                 dataGridView_rewards.DataSource =
                     rewards.Where(d => d.RewardId.ToString().Contains(pattern)
+                                                || d.EmployeeId.ToString().Contains(pattern)
                                                 || d.Date.ToString().Contains(pattern)
                                                 || d.Amount.ToString().Contains(pattern)
                                                 || d.Reason.ToString().Contains(pattern)

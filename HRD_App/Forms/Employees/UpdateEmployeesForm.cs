@@ -18,6 +18,7 @@ namespace HRD_App.Forms
 {
     public partial class UpdateEmployeesForm : Form
     {
+        private Dictionary<int, Position> positions;
         private Employee employee;
         private event OnValueChangedListener<Employee> OnValueChanged;
 
@@ -27,6 +28,9 @@ namespace HRD_App.Forms
 
             setFieldsEnabled(enabled);
 
+            positions = new Dictionary<int, Position>();
+            loadPositionsList(positions);
+
             if (employeeId != -1) setEmployee(employeeId);
         }
 
@@ -34,6 +38,12 @@ namespace HRD_App.Forms
         {
             this.OnValueChanged += listener;
             return this;
+        }
+
+        private async void loadPositionsList(Dictionary<int, Position> positions)
+        {
+            (await RestApi.PositionService.GetAll(false)).ForEach(p => positions.Add(p.PositionId, p));
+            comboBox_position.Items.AddRange(positions.Values.Select(p => p.Name).ToArray());
         }
 
         private void setFieldsEnabled(bool enabled)
@@ -57,7 +67,7 @@ namespace HRD_App.Forms
                 employee = await RestApi.EmployeeService.Get(employeeId);
 
                 textBox_id.Text = employee.EmployeeId.ToString();
-                comboBox_position.Text = employee.Position.Name.ToString();
+                comboBox_position.Text = employee.Position.Name;
                 textBox_firstName.Text = employee.FirstName;
                 textBox_lastName.Text = employee.LastName;
                 textBox_patronymic.Text = employee.Patronymic;
@@ -81,8 +91,10 @@ namespace HRD_App.Forms
 
             try
             {
+                Position position = positions.Values.First(d => d.Name == comboBox_position.Text);
+
                 Employee employee = new Employee();
-                employee.PositionId = Int32.Parse(comboBox_position.Text);
+                employee.PositionId = position.PositionId;
                 employee.FirstName = textBox_firstName.Text;
                 employee.LastName = textBox_lastName.Text;
                 employee.Patronymic = textBox_patronymic.Text;
@@ -99,6 +111,7 @@ namespace HRD_App.Forms
                 {
                     employee.EmployeeId = id;
                     await RestApi.EmployeeService.Update(id, employee);
+                    employee.Position = position;
                 }
                 MessageBox.Show("Запись успешно сохранена!");
 

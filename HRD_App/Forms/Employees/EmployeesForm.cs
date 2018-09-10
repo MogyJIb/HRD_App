@@ -32,7 +32,8 @@ namespace HRD_App.Forms
             employees = new BindingList<Employee>();
             dataGridView_employees.DataSource = employees;
             dataGridView_employees.Columns["Deleted"].Visible = false;
-
+            dataGridView_employees.Columns["Position"].Visible = false;
+            dataGridView_employees.Columns["PositionId"].Visible = false;
 
             AddEmployees(RestApi.EmployeeService.GetAll(false).Result);
             dataGridView_employees.Refresh();
@@ -139,6 +140,7 @@ namespace HRD_App.Forms
             else
                 dataGridView_employees.DataSource =
                     employees.Where(d => d.EmployeeId.ToString().Contains(pattern)
+                                                || d.Position.Name.Contains(pattern)
                                                 || d.FirstName.Contains(pattern)
                                                 || d.LastName.ToString().Contains(pattern)
                                                 || d.Patronymic.Contains(pattern)

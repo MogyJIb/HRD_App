@@ -68,7 +68,7 @@
             // textBox_lastName
             // 
             this.textBox_lastName.Location = new System.Drawing.Point(145, 39);
-            this.textBox_lastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_lastName.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_lastName.Name = "textBox_lastName";
             this.textBox_lastName.Size = new System.Drawing.Size(183, 22);
             this.textBox_lastName.TabIndex = 2;
@@ -76,7 +76,7 @@
             // textBox_firstName
             // 
             this.textBox_firstName.Location = new System.Drawing.Point(145, 71);
-            this.textBox_firstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_firstName.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_firstName.Name = "textBox_firstName";
             this.textBox_firstName.Size = new System.Drawing.Size(183, 22);
             this.textBox_firstName.TabIndex = 3;
@@ -94,7 +94,7 @@
             // textBox_patronymic
             // 
             this.textBox_patronymic.Location = new System.Drawing.Point(145, 103);
-            this.textBox_patronymic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_patronymic.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_patronymic.Name = "textBox_patronymic";
             this.textBox_patronymic.Size = new System.Drawing.Size(183, 22);
             this.textBox_patronymic.TabIndex = 4;
@@ -132,7 +132,7 @@
             // textBox_address
             // 
             this.textBox_address.Location = new System.Drawing.Point(556, 39);
-            this.textBox_address.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_address.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_address.Name = "textBox_address";
             this.textBox_address.Size = new System.Drawing.Size(183, 22);
             this.textBox_address.TabIndex = 7;
@@ -181,7 +181,7 @@
             // 
             this.dateTimePicker_birthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker_birthday.Location = new System.Drawing.Point(556, 7);
-            this.dateTimePicker_birthday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker_birthday.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker_birthday.Name = "dateTimePicker_birthday";
             this.dateTimePicker_birthday.Size = new System.Drawing.Size(183, 22);
             this.dateTimePicker_birthday.TabIndex = 6;
@@ -191,7 +191,7 @@
             // 
             this.comboBox_position.FormattingEnabled = true;
             this.comboBox_position.Location = new System.Drawing.Point(145, 135);
-            this.comboBox_position.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_position.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_position.Name = "comboBox_position";
             this.comboBox_position.Size = new System.Drawing.Size(183, 24);
             this.comboBox_position.TabIndex = 5;
@@ -200,7 +200,7 @@
             // 
             this.dateTimePicker_employmentDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker_employmentDate.Location = new System.Drawing.Point(556, 135);
-            this.dateTimePicker_employmentDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker_employmentDate.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker_employmentDate.Name = "dateTimePicker_employmentDate";
             this.dateTimePicker_employmentDate.Size = new System.Drawing.Size(183, 22);
             this.dateTimePicker_employmentDate.TabIndex = 10;
@@ -209,8 +209,13 @@
             // comboBox_education
             // 
             this.comboBox_education.FormattingEnabled = true;
+            this.comboBox_education.Items.AddRange(new object[] {
+            "Среднее",
+            "Профессионально-техническое",
+            "Среднее специальное",
+            "Высшее"});
             this.comboBox_education.Location = new System.Drawing.Point(556, 103);
-            this.comboBox_education.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_education.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_education.Name = "comboBox_education";
             this.comboBox_education.Size = new System.Drawing.Size(183, 24);
             this.comboBox_education.TabIndex = 9;
@@ -218,7 +223,7 @@
             // maskedTextBox_phone
             // 
             this.maskedTextBox_phone.Location = new System.Drawing.Point(556, 71);
-            this.maskedTextBox_phone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.maskedTextBox_phone.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBox_phone.Mask = "+375 00 000-00-00";
             this.maskedTextBox_phone.Name = "maskedTextBox_phone";
             this.maskedTextBox_phone.Size = new System.Drawing.Size(183, 22);
@@ -235,12 +240,13 @@
             this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_save.ForeColor = System.Drawing.Color.White;
             this.button_save.Location = new System.Drawing.Point(487, 180);
-            this.button_save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_save.Margin = new System.Windows.Forms.Padding(4);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(124, 36);
             this.button_save.TabIndex = 23;
             this.button_save.Text = "Сохранить";
             this.button_save.UseVisualStyleBackColor = false;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // button_cancel
             // 
@@ -254,7 +260,7 @@
             this.button_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_cancel.ForeColor = System.Drawing.Color.White;
             this.button_cancel.Location = new System.Drawing.Point(619, 180);
-            this.button_cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_cancel.Margin = new System.Windows.Forms.Padding(4);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(124, 36);
             this.button_cancel.TabIndex = 24;
@@ -264,7 +270,7 @@
             // textBox_id
             // 
             this.textBox_id.Location = new System.Drawing.Point(145, 7);
-            this.textBox_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_id.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_id.Name = "textBox_id";
             this.textBox_id.Size = new System.Drawing.Size(183, 22);
             this.textBox_id.TabIndex = 1;
@@ -312,7 +318,7 @@
             this.Controls.Add(this.textBox_lastName);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "UpdateEmployeesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

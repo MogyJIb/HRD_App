@@ -18,6 +18,7 @@ namespace HRD_App.Forms
 {
     public partial class UpdateHolidaysForm : Form
     {
+        private Dictionary<int, Employee> employees;
         private Holiday holiday;
         private event OnValueChangedListener<Holiday> OnValueChanged;
 
@@ -26,6 +27,9 @@ namespace HRD_App.Forms
             InitializeComponent();
 
             setFieldsEnabled(enabled);
+
+            employees = new Dictionary<int, Employee>();
+            loadEmployeesList(employees);
 
             if (holidayId != -1) setHoliday(holidayId);
         }
@@ -36,10 +40,16 @@ namespace HRD_App.Forms
             return this;
         }
 
+        private async void loadEmployeesList(Dictionary<int, Employee> employees)
+        {
+            (await RestApi.EmployeeService.GetAll(false)).ForEach(p => employees.Add(p.EmployeeId, p));
+            comboBox_employeeId.Items.AddRange(employees.Keys.Select(e => e.ToString()).ToArray());
+        }
+
         private void setFieldsEnabled(bool enabled)
         {
             textBox_id.Enabled = false;
-            textBox_employeeId.Enabled = enabled;
+            comboBox_employeeId.Enabled = enabled;
             dateTimePicker_startDate.Enabled = enabled;
             dateTimePicker_finalDate.Enabled = enabled;
             textBox_salary.Enabled = enabled;
@@ -53,7 +63,7 @@ namespace HRD_App.Forms
                 holiday = await RestApi.HolidayService.Get(holidayId);
 
                 textBox_id.Text = holiday.HolidayId.ToString();
-                textBox_employeeId.Text = holiday.EmployeeId.ToString();
+                comboBox_employeeId.Text = holiday.EmployeeId.ToString();
                 dateTimePicker_startDate.Text = holiday.StartDate.ToString();
                 dateTimePicker_finalDate.Text = holiday.FinalDate.ToString();
                 textBox_salary.Text = holiday.Salary.ToString();
@@ -73,8 +83,10 @@ namespace HRD_App.Forms
 
             try
             {
+                Employee employee = employees[Int32.Parse(comboBox_employeeId.Text)];
+
                 Holiday holiday = new Holiday();
-                holiday.EmployeeId = Int32.Parse(textBox_employeeId.Text);
+                holiday.EmployeeId = employee.EmployeeId;
                 holiday.StartDate = dateTimePicker_startDate.Value.Date;
                 holiday.FinalDate = dateTimePicker_finalDate.Value.Date;
                 holiday.Salary = Double.Parse(textBox_salary.Text);
@@ -87,6 +99,7 @@ namespace HRD_App.Forms
                 {
                     holiday.HolidayId = id;
                     await RestApi.HolidayService.Update(id, holiday);
+                    holiday.Employee = employee;
                 }
                 MessageBox.Show("Запись успешно сохранена!");
 
@@ -106,9 +119,9 @@ namespace HRD_App.Forms
             bool isValid = true;
             errorProvider.Clear();
 
-            if (textBox_employeeId.Text == "")
+            if (comboBox_employeeId.Text == "")
             {
-                errorProvider.SetError(textBox_employeeId, "Поле обязательно для заполнения!");
+                errorProvider.SetError(comboBox_employeeId, "Поле обязательно для заполнения!");
                 isValid = false;
             }
 

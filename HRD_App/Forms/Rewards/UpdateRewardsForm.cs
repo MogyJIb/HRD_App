@@ -18,6 +18,7 @@ namespace HRD_App.Forms
 {
     public partial class UpdateRewardsForm : Form
     {
+        private Dictionary<int, Employee> employees;
         private Reward reward;
         private event OnValueChangedListener<Reward> OnValueChanged;
 
@@ -26,6 +27,9 @@ namespace HRD_App.Forms
             InitializeComponent();
 
             setFieldsEnabled(enabled);
+
+            employees = new Dictionary<int, Employee>();
+            loadEmployeesList(employees);
 
             if (rewardId != -1) setReward(rewardId);
         }
@@ -36,10 +40,16 @@ namespace HRD_App.Forms
             return this;
         }
 
+        private async void loadEmployeesList(Dictionary<int, Employee> employees)
+        {
+            (await RestApi.EmployeeService.GetAll(false)).ForEach(p => employees.Add(p.EmployeeId, p));
+            comboBox_employeeId.Items.AddRange(employees.Keys.Select(e => e.ToString()).ToArray());
+        }
+
         private void setFieldsEnabled(bool enabled)
         {
             textBox_id.Enabled = false;
-            textBox_employeeId.Enabled = enabled;
+            comboBox_employeeId.Enabled = enabled;
             dateTimePicker_date.Enabled = enabled;
             textBox_amount.Enabled = enabled;
             textBox_reason.Enabled = enabled;
@@ -52,7 +62,7 @@ namespace HRD_App.Forms
                 reward = await RestApi.RewardService.Get(rewardId);
 
                 textBox_id.Text = reward.RewardId.ToString();
-                textBox_employeeId.Text = reward.EmployeeId.ToString();
+                comboBox_employeeId.Text = reward.EmployeeId.ToString();
                 dateTimePicker_date.Text = reward.Date.ToString();
                 textBox_amount.Text = reward.Amount.ToString();
                 textBox_reason.Text = reward.Reason;
@@ -71,8 +81,10 @@ namespace HRD_App.Forms
 
             try
             {
+                Employee employee = employees[Int32.Parse(comboBox_employeeId.Text)];
+
                 Reward reward = new Reward();
-                reward.EmployeeId = Int32.Parse(textBox_employeeId.Text);
+                reward.EmployeeId = employee.EmployeeId;
                 reward.Date = dateTimePicker_date.Value.Date;
                 reward.Amount = Double.Parse(textBox_amount.Text);
                 reward.Reason = textBox_reason.Text;
@@ -84,6 +96,7 @@ namespace HRD_App.Forms
                 {
                     reward.RewardId = id;
                     await RestApi.RewardService.Update(id, reward);
+                    reward.Employee = employee;
                 }
                 MessageBox.Show("Запись успешно сохранена!");
 
@@ -103,9 +116,9 @@ namespace HRD_App.Forms
             bool isValid = true;
             errorProvider.Clear();
 
-            if (textBox_employeeId.Text == "")
+            if (comboBox_employeeId.Text == "")
             {
-                errorProvider.SetError(textBox_employeeId, "Поле обязательно для заполнения!");
+                errorProvider.SetError(comboBox_employeeId, "Поле обязательно для заполнения!");
                 isValid = false;
             }
 

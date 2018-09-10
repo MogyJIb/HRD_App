@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView_vacancies = new System.Windows.Forms.DataGridView();
             this.pictureBox_search = new System.Windows.Forms.PictureBox();
             this.textBox_search = new System.Windows.Forms.TextBox();
@@ -56,43 +56,44 @@
             this.dataGridView_vacancies.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_vacancies.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_vacancies.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_vacancies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_vacancies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_vacancies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_vacancies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.VacancyIdColumn,
             this.PositionColumn,
             this.NumberColumn});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_vacancies.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_vacancies.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_vacancies.EnableHeadersVisualStyles = false;
             this.dataGridView_vacancies.GridColor = System.Drawing.Color.White;
             this.dataGridView_vacancies.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dataGridView_vacancies.Location = new System.Drawing.Point(12, 38);
+            this.dataGridView_vacancies.Location = new System.Drawing.Point(16, 47);
+            this.dataGridView_vacancies.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView_vacancies.MultiSelect = false;
             this.dataGridView_vacancies.Name = "dataGridView_vacancies";
             this.dataGridView_vacancies.ReadOnly = true;
             this.dataGridView_vacancies.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView_vacancies.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView_vacancies.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView_vacancies.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_vacancies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_vacancies.Size = new System.Drawing.Size(709, 307);
+            this.dataGridView_vacancies.Size = new System.Drawing.Size(945, 378);
             this.dataGridView_vacancies.TabIndex = 0;
             // 
             // pictureBox_search
@@ -100,9 +101,10 @@
             this.pictureBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox_search.BackColor = System.Drawing.Color.CadetBlue;
             this.pictureBox_search.Image = global::HRD_App.Properties.Resources.baseline_search_white_18dp;
-            this.pictureBox_search.Location = new System.Drawing.Point(692, 15);
+            this.pictureBox_search.Location = new System.Drawing.Point(923, 18);
+            this.pictureBox_search.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox_search.Name = "pictureBox_search";
-            this.pictureBox_search.Size = new System.Drawing.Size(28, 18);
+            this.pictureBox_search.Size = new System.Drawing.Size(37, 22);
             this.pictureBox_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_search.TabIndex = 17;
             this.pictureBox_search.TabStop = false;
@@ -111,15 +113,17 @@
             // 
             this.textBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_search.ForeColor = System.Drawing.Color.Gray;
-            this.textBox_search.Location = new System.Drawing.Point(474, 14);
+            this.textBox_search.Location = new System.Drawing.Point(632, 17);
+            this.textBox_search.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_search.Name = "textBox_search";
-            this.textBox_search.Size = new System.Drawing.Size(247, 20);
+            this.textBox_search.Size = new System.Drawing.Size(328, 22);
             this.textBox_search.TabIndex = 16;
             this.textBox_search.Text = "Поиск";
             this.textBox_search.TextChanged += new System.EventHandler(this.textBox_search_TextChanged);
             // 
             // button_update
             // 
+            this.button_update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button_update.BackColor = System.Drawing.Color.CadetBlue;
             this.button_update.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.button_update.FlatAppearance.BorderSize = 0;
@@ -128,9 +132,10 @@
             this.button_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_update.ForeColor = System.Drawing.Color.White;
-            this.button_update.Location = new System.Drawing.Point(178, 351);
+            this.button_update.Location = new System.Drawing.Point(237, 432);
+            this.button_update.Margin = new System.Windows.Forms.Padding(4);
             this.button_update.Name = "button_update";
-            this.button_update.Size = new System.Drawing.Size(160, 29);
+            this.button_update.Size = new System.Drawing.Size(213, 36);
             this.button_update.TabIndex = 15;
             this.button_update.Text = "Редактировать";
             this.button_update.UseVisualStyleBackColor = false;
@@ -138,6 +143,7 @@
             // 
             // button_add
             // 
+            this.button_add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button_add.BackColor = System.Drawing.Color.CadetBlue;
             this.button_add.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.button_add.FlatAppearance.BorderSize = 0;
@@ -146,9 +152,10 @@
             this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_add.ForeColor = System.Drawing.Color.White;
-            this.button_add.Location = new System.Drawing.Point(12, 351);
+            this.button_add.Location = new System.Drawing.Point(16, 432);
+            this.button_add.Margin = new System.Windows.Forms.Padding(4);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(160, 29);
+            this.button_add.Size = new System.Drawing.Size(213, 36);
             this.button_add.TabIndex = 14;
             this.button_add.Text = "Добавить";
             this.button_add.UseVisualStyleBackColor = false;
@@ -165,9 +172,10 @@
             this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_delete.ForeColor = System.Drawing.Color.White;
-            this.button_delete.Location = new System.Drawing.Point(344, 352);
+            this.button_delete.Location = new System.Drawing.Point(458, 432);
+            this.button_delete.Margin = new System.Windows.Forms.Padding(4);
             this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(160, 29);
+            this.button_delete.Size = new System.Drawing.Size(213, 36);
             this.button_delete.TabIndex = 19;
             this.button_delete.Text = "Удалить";
             this.button_delete.UseVisualStyleBackColor = false;
@@ -175,33 +183,37 @@
             // 
             // VacancyIdColumn
             // 
+            this.VacancyIdColumn.DataPropertyName = "VacancyId";
             this.VacancyIdColumn.HeaderText = "Код";
             this.VacancyIdColumn.Name = "VacancyIdColumn";
             this.VacancyIdColumn.ReadOnly = true;
             // 
             // PositionColumn
             // 
+            this.PositionColumn.DataPropertyName = "PositionName";
             this.PositionColumn.HeaderText = "Должность";
             this.PositionColumn.Name = "PositionColumn";
             this.PositionColumn.ReadOnly = true;
             // 
             // NumberColumn
             // 
+            this.NumberColumn.DataPropertyName = "Number";
             this.NumberColumn.HeaderText = "Количество";
             this.NumberColumn.Name = "NumberColumn";
             this.NumberColumn.ReadOnly = true;
             // 
             // VacanciesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 392);
+            this.ClientSize = new System.Drawing.Size(979, 482);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.pictureBox_search);
             this.Controls.Add(this.textBox_search);
             this.Controls.Add(this.button_update);
             this.Controls.Add(this.button_add);
             this.Controls.Add(this.dataGridView_vacancies);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VacanciesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Вакансии";

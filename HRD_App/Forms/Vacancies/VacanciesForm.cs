@@ -32,6 +32,8 @@ namespace HRD_App.Forms
             vacancies = new BindingList<Vacancy>();
             dataGridView_vacancies.DataSource = vacancies;
             dataGridView_vacancies.Columns["Deleted"].Visible = false;
+            dataGridView_vacancies.Columns["Position"].Visible = false;
+            dataGridView_vacancies.Columns["PositionId"].Visible = false;
 
 
             AddVacancies(RestApi.VacancyService.GetAll(false).Result);
@@ -133,6 +135,7 @@ namespace HRD_App.Forms
             else
                 dataGridView_vacancies.DataSource =
                     vacancies.Where(d => d.VacancyId.ToString().Contains(pattern)
+                                                || d.Position.Name.Contains(pattern)
                                                 || d.Number.ToString().Contains(pattern)
                                 ).ToList();
         }

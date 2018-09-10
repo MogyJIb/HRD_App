@@ -32,6 +32,8 @@ namespace HRD_App.Forms
             positions = new BindingList<Position>();
             dataGridView_positions.DataSource = positions;
             dataGridView_positions.Columns["Deleted"].Visible = false;
+            dataGridView_positions.Columns["Department"].Visible = false;
+            dataGridView_positions.Columns["DepartmentId"].Visible = false;
 
 
             AddPositions(RestApi.PositionService.GetAll(false).Result);
@@ -60,6 +62,7 @@ namespace HRD_App.Forms
             oldPosition.Name = newPosition.Name;
             oldPosition.Requirements = newPosition.Requirements;
             oldPosition.Salary = newPosition.Salary;
+            oldPosition.Department = newPosition.Department;
         }
 
         private void DeletePosition(Position position)
@@ -136,6 +139,7 @@ namespace HRD_App.Forms
             else
                 dataGridView_positions.DataSource =
                     positions.Where(d => d.PositionId.ToString().Contains(pattern)
+                                                || d.Department.Name.Contains(pattern)
                                                 || d.Name.Contains(pattern)
                                                 || d.Requirements.Contains(pattern)
                                                 || d.Duties.Contains(pattern)

@@ -18,6 +18,7 @@ namespace HRD_App.Forms
 {
     public partial class UpdateWorkedTimesForm : Form
     {
+        private Dictionary<int, Employee> employees;
         private WorkedTime workedTime;
         private event OnValueChangedListener<WorkedTime> OnValueChanged;
 
@@ -26,6 +27,9 @@ namespace HRD_App.Forms
             InitializeComponent();
 
             setFieldsEnabled(enabled);
+
+            employees = new Dictionary<int, Employee>();
+            loadEmployeesList(employees);
 
             if (workedTimeId != -1) setWorkedTime(workedTimeId);
         }
@@ -36,10 +40,16 @@ namespace HRD_App.Forms
             return this;
         }
 
+        private async void loadEmployeesList(Dictionary<int, Employee> employees)
+        {
+            (await RestApi.EmployeeService.GetAll(false)).ForEach(p => employees.Add(p.EmployeeId, p));
+            comboBox_employeeId.Items.AddRange(employees.Keys.Select(e => e.ToString()).ToArray());
+        }
+
         private void setFieldsEnabled(bool enabled)
         {
             textBox_id.Enabled = false;
-            textBox_employeeId.Enabled = enabled;
+            comboBox_employeeId.Enabled = enabled;
             dateTimePicker_date.Enabled = enabled;
             dateTimePicker_arrivalTime.Enabled = enabled;
             dateTimePicker_leavingTime.Enabled = enabled;
@@ -52,7 +62,7 @@ namespace HRD_App.Forms
                 workedTime = await RestApi.WorkedTimeService.Get(workedTimeId);
 
                 textBox_id.Text = workedTime.WorkedTimeId.ToString();
-                textBox_employeeId.Text = workedTime.EmployeeId.ToString();
+                comboBox_employeeId.Text = workedTime.EmployeeId.ToString();
                 dateTimePicker_date.Text = workedTime.Date.ToString();
                 dateTimePicker_arrivalTime.Text = workedTime.ArrivalTime.ToString();
                 dateTimePicker_leavingTime.Text = workedTime.LeavingTime.ToString();
@@ -71,8 +81,10 @@ namespace HRD_App.Forms
 
             try
             {
+                Employee employee = employees[Int32.Parse(comboBox_employeeId.Text)];
+
                 WorkedTime workedTime = new WorkedTime();
-                workedTime.EmployeeId = Int32.Parse(textBox_employeeId.Text);
+                workedTime.EmployeeId = employee.EmployeeId;
                 workedTime.Date = dateTimePicker_date.Value.Date;
                 workedTime.ArrivalTime = dateTimePicker_arrivalTime.Value.TimeOfDay;
                 workedTime.LeavingTime = dateTimePicker_leavingTime.Value.TimeOfDay;
@@ -84,6 +96,7 @@ namespace HRD_App.Forms
                 {
                     workedTime.WorkedTimeId = id;
                     await RestApi.WorkedTimeService.Update(id, workedTime);
+                    workedTime.Employee = employee;
                 }
                 MessageBox.Show("Запись успешно сохранена!");
 
@@ -103,9 +116,9 @@ namespace HRD_App.Forms
             bool isValid = true;
             errorProvider.Clear();
 
-            if (textBox_employeeId.Text == "")
+            if (comboBox_employeeId.Text == "")
             {
-                errorProvider.SetError(textBox_employeeId, "Поле обязательно для заполнения!");
+                errorProvider.SetError(comboBox_employeeId, "Поле обязательно для заполнения!");
                 isValid = false;
             }
 

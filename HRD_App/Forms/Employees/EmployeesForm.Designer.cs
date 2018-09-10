@@ -34,6 +34,9 @@
             this.button_update = new System.Windows.Forms.Button();
             this.button_add = new System.Windows.Forms.Button();
             this.dataGridView_employees = new System.Windows.Forms.DataGridView();
+            this.textBox_search = new System.Windows.Forms.TextBox();
+            this.pictureBox_search = new System.Windows.Forms.PictureBox();
+            this.button_delete = new System.Windows.Forms.Button();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,15 +47,13 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox_search = new System.Windows.Forms.TextBox();
-            this.pictureBox_search = new System.Windows.Forms.PictureBox();
-            this.button_delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_employees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_search)).BeginInit();
             this.SuspendLayout();
             // 
             // button_update
             // 
+            this.button_update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button_update.BackColor = System.Drawing.Color.CadetBlue;
             this.button_update.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.button_update.FlatAppearance.BorderSize = 0;
@@ -68,9 +69,11 @@
             this.button_update.TabIndex = 11;
             this.button_update.Text = "Редактировать";
             this.button_update.UseVisualStyleBackColor = false;
+            this.button_update.Click += new System.EventHandler(this.button_update_Click);
             // 
             // button_add
             // 
+            this.button_add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button_add.BackColor = System.Drawing.Color.CadetBlue;
             this.button_add.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.button_add.FlatAppearance.BorderSize = 0;
@@ -86,9 +89,11 @@
             this.button_add.TabIndex = 10;
             this.button_add.Text = "Добавить";
             this.button_add.UseVisualStyleBackColor = false;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
             // dataGridView_employees
             // 
+            this.dataGridView_employees.AllowUserToAddRows = false;
             this.dataGridView_employees.AllowUserToDeleteRows = false;
             this.dataGridView_employees.AllowUserToResizeColumns = false;
             this.dataGridView_employees.AllowUserToResizeRows = false;
@@ -144,66 +149,6 @@
             this.dataGridView_employees.Size = new System.Drawing.Size(947, 378);
             this.dataGridView_employees.TabIndex = 0;
             // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Код";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Фамилия";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Имя";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Отчество";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Должность";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Дата рождения";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Адрес";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Телефон";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Образование";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Дата принятия на работу";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
             // textBox_search
             // 
             this.textBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -247,6 +192,77 @@
             this.button_delete.TabIndex = 19;
             this.button_delete.Text = "Удалить";
             this.button_delete.UseVisualStyleBackColor = false;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "EmployeeId";
+            this.Column5.HeaderText = "Код";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "LastName";
+            this.Column1.HeaderText = "Фамилия";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "FirstName";
+            this.Column2.HeaderText = "Имя";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Patronymic";
+            this.Column3.HeaderText = "Отчество";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "PositionName";
+            this.Column10.HeaderText = "Должность";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "BirthDate";
+            this.Column4.HeaderText = "Дата рождения";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Address";
+            this.Column6.HeaderText = "Адрес";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "Phone";
+            this.Column7.HeaderText = "Телефон";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "Education";
+            this.Column8.HeaderText = "Образование";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "EmploymentDate";
+            this.Column9.HeaderText = "Дата принятия на работу";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
             // 
             // EmployeesForm
             // 
@@ -275,6 +291,9 @@
         private System.Windows.Forms.Button button_update;
         private System.Windows.Forms.Button button_add;
         private System.Windows.Forms.DataGridView dataGridView_employees;
+        private System.Windows.Forms.PictureBox pictureBox_search;
+        private System.Windows.Forms.TextBox textBox_search;
+        private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -285,8 +304,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.PictureBox pictureBox_search;
-        private System.Windows.Forms.TextBox textBox_search;
-        private System.Windows.Forms.Button button_delete;
     }
 }

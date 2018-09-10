@@ -32,6 +32,8 @@ namespace HRD_App.Forms
             resumes = new BindingList<Resume>();
             dataGridView_resumes.DataSource = resumes;
             dataGridView_resumes.Columns["Deleted"].Visible = false;
+            dataGridView_resumes.Columns["Vacancy"].Visible = false;
+            dataGridView_resumes.Columns["VacancyId"].Visible = false;
 
 
             AddResumes(RestApi.ResumeService.GetAll(false).Result);
@@ -141,6 +143,7 @@ namespace HRD_App.Forms
             else
                 dataGridView_resumes.DataSource =
                     resumes.Where(d => d.ResumeId.ToString().Contains(pattern)
+                                                || d.Vacancy.Position.Name.Contains(pattern)
                                                 || d.FirstName.Contains(pattern)
                                                 || d.LastName.ToString().Contains(pattern)
                                                 || d.Patronymic.Contains(pattern)

@@ -32,6 +32,8 @@ namespace HRD_App.Forms
             holidays = new BindingList<Holiday>();
             dataGridView_holidays.DataSource = holidays;
             dataGridView_holidays.Columns["Deleted"].Visible = false;
+            dataGridView_holidays.Columns["Employee"].Visible = false;
+            dataGridView_holidays.Columns["EmployeeId"].Visible = false;
 
 
             AddHolidays(RestApi.HolidayService.GetAll(false).Result);
@@ -136,6 +138,7 @@ namespace HRD_App.Forms
             else
                 dataGridView_holidays.DataSource =
                     holidays.Where(d => d.HolidayId.ToString().Contains(pattern)
+                                                || d.EmployeeId.ToString().Contains(pattern)
                                                 || d.StartDate.ToString().Contains(pattern)
                                                 || d.FinalDate.ToString().Contains(pattern)
                                                 || d.Type.Contains(pattern)
