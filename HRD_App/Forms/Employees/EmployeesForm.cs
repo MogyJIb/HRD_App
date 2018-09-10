@@ -94,21 +94,24 @@ namespace HRD_App.Forms
         private async void button_delete_Click(object sender, EventArgs e)
         {
             if (employees.Count < 1) return;
-
-            int row = dataGridView_employees.CurrentRow.Index;
-            int id = (int)dataGridView_employees[0, row].Value;
-
-            try
+            DialogResult result = MessageBox.Show("Вы действительно хотите удалить запись?", "", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                Employee employee = await RestApi.EmployeeService.Delete(id);
-                DeleteEmployee(employee);
-                Filter();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-                Console.WriteLine(exception.Message);
-                Console.WriteLine(exception.StackTrace);
+                int row = dataGridView_employees.CurrentRow.Index;
+                int id = (int)dataGridView_employees[0, row].Value;
+
+                try
+                {
+                    Employee employee = await RestApi.EmployeeService.Delete(id);
+                    DeleteEmployee(employee);
+                    Filter();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                    Console.WriteLine(exception.Message);
+                    Console.WriteLine(exception.StackTrace);
+                }
             }
         }
 

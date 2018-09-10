@@ -138,7 +138,7 @@ namespace HRD_App.Forms
             }
             catch(Exception exception)
             {
-                MessageBox.Show("Неверный формат!");
+                errorProvider.SetError(textBox_salary, "Неверный формат!");
                 isValid = false;
             }
             

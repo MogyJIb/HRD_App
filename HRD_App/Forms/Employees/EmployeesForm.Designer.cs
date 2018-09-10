@@ -62,7 +62,7 @@
             this.button_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_update.ForeColor = System.Drawing.Color.White;
             this.button_update.Location = new System.Drawing.Point(236, 432);
-            this.button_update.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_update.Margin = new System.Windows.Forms.Padding(4);
             this.button_update.Name = "button_update";
             this.button_update.Size = new System.Drawing.Size(213, 36);
             this.button_update.TabIndex = 11;
@@ -80,7 +80,7 @@
             this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_add.ForeColor = System.Drawing.Color.White;
             this.button_add.Location = new System.Drawing.Point(15, 432);
-            this.button_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_add.Margin = new System.Windows.Forms.Padding(4);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(213, 36);
             this.button_add.TabIndex = 10;
@@ -130,7 +130,8 @@
             this.dataGridView_employees.GridColor = System.Drawing.Color.White;
             this.dataGridView_employees.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dataGridView_employees.Location = new System.Drawing.Point(15, 47);
-            this.dataGridView_employees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView_employees.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView_employees.MultiSelect = false;
             this.dataGridView_employees.Name = "dataGridView_employees";
             this.dataGridView_employees.ReadOnly = true;
             this.dataGridView_employees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -139,6 +140,7 @@
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView_employees.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView_employees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_employees.Size = new System.Drawing.Size(947, 378);
             this.dataGridView_employees.TabIndex = 0;
             // 
@@ -257,8 +259,9 @@
             this.Controls.Add(this.dataGridView_employees);
             this.Controls.Add(this.button_update);
             this.Controls.Add(this.button_add);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сотрудники";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_employees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_search)).EndInit();

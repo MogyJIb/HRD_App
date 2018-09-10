@@ -133,7 +133,7 @@ namespace HRD_App.Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Неверный формат!");
+                errorProvider.SetError(textBox_amount, "Неверный формат!");
                 isValid = false;
             }
 

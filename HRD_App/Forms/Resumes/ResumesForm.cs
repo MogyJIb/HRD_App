@@ -96,20 +96,24 @@ namespace HRD_App.Forms
         {
             if (resumes.Count < 1) return;
 
-            int row = dataGridView_resumes.CurrentRow.Index;
-            int id = (int)dataGridView_resumes[0, row].Value;
+            DialogResult result = MessageBox.Show("Вы действительно хотите удалить запись?", "", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                int row = dataGridView_resumes.CurrentRow.Index;
+                int id = (int)dataGridView_resumes[0, row].Value;
 
-            try
-            {
-                Resume resume = await RestApi.ResumeService.Delete(id);
-                DeleteResume(resume);
-                Filter();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-                Console.WriteLine(exception.Message);
-                Console.WriteLine(exception.StackTrace);
+                try
+                {
+                    Resume resume = await RestApi.ResumeService.Delete(id);
+                    DeleteResume(resume);
+                    Filter();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                    Console.WriteLine(exception.Message);
+                    Console.WriteLine(exception.StackTrace);
+                }
             }
         }
 

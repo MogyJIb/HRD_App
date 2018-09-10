@@ -90,20 +90,24 @@ namespace HRD_App.Forms
         {
             if (rewards.Count < 1) return;
 
-            int row = dataGridView_rewards.CurrentRow.Index;
-            int id = (int)dataGridView_rewards[0, row].Value;
+            DialogResult result = MessageBox.Show("Вы действительно хотите удалить запись?", "", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                int row = dataGridView_rewards.CurrentRow.Index;
+                int id = (int)dataGridView_rewards[0, row].Value;
 
-            try
-            {
-                Reward reward = await RestApi.RewardService.Delete(id);
-                DeleteReward(reward);
-                Filter();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-                Console.WriteLine(exception.Message);
-                Console.WriteLine(exception.StackTrace);
+                try
+                {
+                    Reward reward = await RestApi.RewardService.Delete(id);
+                    DeleteReward(reward);
+                    Filter();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                    Console.WriteLine(exception.Message);
+                    Console.WriteLine(exception.StackTrace);
+                }
             }
         }
 

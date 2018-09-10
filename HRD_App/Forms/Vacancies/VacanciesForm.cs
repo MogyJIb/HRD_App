@@ -88,20 +88,24 @@ namespace HRD_App.Forms
         {
             if (vacancies.Count < 1) return;
 
-            int row = dataGridView_vacancies.CurrentRow.Index;
-            int id = (int)dataGridView_vacancies[0, row].Value;
+            DialogResult result = MessageBox.Show("Вы действительно хотите удалить запись?", "", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                int row = dataGridView_vacancies.CurrentRow.Index;
+                int id = (int)dataGridView_vacancies[0, row].Value;
 
-            try
-            {
-                Vacancy vacancy = await RestApi.VacancyService.Delete(id);
-                DeleteVacancy(vacancy);
-                Filter();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-                Console.WriteLine(exception.Message);
-                Console.WriteLine(exception.StackTrace);
+                try
+                {
+                    Vacancy vacancy = await RestApi.VacancyService.Delete(id);
+                    DeleteVacancy(vacancy);
+                    Filter();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                    Console.WriteLine(exception.Message);
+                    Console.WriteLine(exception.StackTrace);
+                }
             }
         }
 

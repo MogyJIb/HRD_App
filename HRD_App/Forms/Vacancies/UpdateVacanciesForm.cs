@@ -115,7 +115,7 @@ namespace HRD_App.Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Неверный формат!");
+                errorProvider.SetError(comboBox_number, "Неверный формат!");
                 isValid = false;
             }
 

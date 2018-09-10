@@ -91,20 +91,24 @@ namespace HRD_App.Forms
         {
             if (positions.Count < 1) return;
 
-            int row = dataGridView_positions.CurrentRow.Index;
-            int id = (int)dataGridView_positions[0, row].Value;
+            DialogResult result = MessageBox.Show("Вы действительно хотите удалить запись?", "", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                int row = dataGridView_positions.CurrentRow.Index;
+                int id = (int)dataGridView_positions[0, row].Value;
 
-            try
-            {
-                Position position = await RestApi.PositionService.Delete(id);
-                DeletePosition(position);
-                Filter();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-                Console.WriteLine(exception.Message);
-                Console.WriteLine(exception.StackTrace);
+                try
+                {
+                    Position position = await RestApi.PositionService.Delete(id);
+                    DeletePosition(position);
+                    Filter();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                    Console.WriteLine(exception.Message);
+                    Console.WriteLine(exception.StackTrace);
+                }
             }
         }
 

@@ -91,20 +91,24 @@ namespace HRD_App.Forms
         {
             if (holidays.Count < 1) return;
 
-            int row = dataGridView_holidays.CurrentRow.Index;
-            int id = (int)dataGridView_holidays[0, row].Value;
+            DialogResult result = MessageBox.Show("Вы действительно хотите удалить запись?", "", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                int row = dataGridView_holidays.CurrentRow.Index;
+                int id = (int)dataGridView_holidays[0, row].Value;
 
-            try
-            {
-                Holiday holiday = await RestApi.HolidayService.Delete(id);
-                DeleteHoliday(holiday);
-                Filter();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-                Console.WriteLine(exception.Message);
-                Console.WriteLine(exception.StackTrace);
+                try
+                {
+                    Holiday holiday = await RestApi.HolidayService.Delete(id);
+                    DeleteHoliday(holiday);
+                    Filter();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                    Console.WriteLine(exception.Message);
+                    Console.WriteLine(exception.StackTrace);
+                }
             }
         }
 
