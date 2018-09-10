@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridView_employees = new System.Windows.Forms.DataGridView();
+            this.dataGridView_workedTimes = new System.Windows.Forms.DataGridView();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,21 +42,21 @@
             this.button_update = new System.Windows.Forms.Button();
             this.button_add = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_employees)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_workedTimes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_search)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView_employees
+            // dataGridView_workedTimes
             // 
-            this.dataGridView_employees.AllowUserToDeleteRows = false;
-            this.dataGridView_employees.AllowUserToResizeColumns = false;
-            this.dataGridView_employees.AllowUserToResizeRows = false;
-            this.dataGridView_employees.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView_workedTimes.AllowUserToDeleteRows = false;
+            this.dataGridView_workedTimes.AllowUserToResizeColumns = false;
+            this.dataGridView_workedTimes.AllowUserToResizeRows = false;
+            this.dataGridView_workedTimes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView_employees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_employees.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView_employees.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView_employees.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView_workedTimes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_workedTimes.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView_workedTimes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView_workedTimes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.CadetBlue;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -65,9 +65,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_employees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView_employees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_employees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView_workedTimes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView_workedTimes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_workedTimes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column5,
             this.Column1,
             this.Column2,
@@ -80,22 +80,21 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_employees.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView_employees.EnableHeadersVisualStyles = false;
-            this.dataGridView_employees.GridColor = System.Drawing.Color.White;
-            this.dataGridView_employees.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dataGridView_employees.Location = new System.Drawing.Point(16, 47);
-            this.dataGridView_employees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView_employees.Name = "dataGridView_employees";
-            this.dataGridView_employees.ReadOnly = true;
-            this.dataGridView_employees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView_employees.RowHeadersVisible = false;
+            this.dataGridView_workedTimes.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView_workedTimes.EnableHeadersVisualStyles = false;
+            this.dataGridView_workedTimes.GridColor = System.Drawing.Color.White;
+            this.dataGridView_workedTimes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dataGridView_workedTimes.Location = new System.Drawing.Point(12, 38);
+            this.dataGridView_workedTimes.Name = "dataGridView_workedTimes";
+            this.dataGridView_workedTimes.ReadOnly = true;
+            this.dataGridView_workedTimes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView_workedTimes.RowHeadersVisible = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView_employees.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView_employees.Size = new System.Drawing.Size(947, 378);
-            this.dataGridView_employees.TabIndex = 0;
+            this.dataGridView_workedTimes.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView_workedTimes.Size = new System.Drawing.Size(710, 307);
+            this.dataGridView_workedTimes.TabIndex = 0;
             // 
             // Column5
             // 
@@ -129,25 +128,25 @@
             // 
             // pictureBox_search
             // 
-            this.pictureBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox_search.BackColor = System.Drawing.Color.CadetBlue;
             this.pictureBox_search.Image = global::HRD_App.Properties.Resources.baseline_search_white_18dp;
-            this.pictureBox_search.Location = new System.Drawing.Point(923, 19);
-            this.pictureBox_search.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox_search.Location = new System.Drawing.Point(692, 15);
             this.pictureBox_search.Name = "pictureBox_search";
-            this.pictureBox_search.Size = new System.Drawing.Size(38, 22);
+            this.pictureBox_search.Size = new System.Drawing.Size(28, 18);
             this.pictureBox_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_search.TabIndex = 17;
             this.pictureBox_search.TabStop = false;
             // 
             // textBox_search
             // 
-            this.textBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_search.ForeColor = System.Drawing.Color.Gray;
-            this.textBox_search.Location = new System.Drawing.Point(632, 17);
-            this.textBox_search.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_search.Location = new System.Drawing.Point(474, 14);
             this.textBox_search.Name = "textBox_search";
-            this.textBox_search.Size = new System.Drawing.Size(328, 22);
+            this.textBox_search.Size = new System.Drawing.Size(247, 20);
             this.textBox_search.TabIndex = 16;
             this.textBox_search.Text = "Поиск";
             this.textBox_search.TextChanged += new System.EventHandler(this.textBox_search_TextChanged);
@@ -162,10 +161,9 @@
             this.button_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_update.ForeColor = System.Drawing.Color.White;
-            this.button_update.Location = new System.Drawing.Point(237, 432);
-            this.button_update.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_update.Location = new System.Drawing.Point(178, 351);
             this.button_update.Name = "button_update";
-            this.button_update.Size = new System.Drawing.Size(213, 36);
+            this.button_update.Size = new System.Drawing.Size(160, 29);
             this.button_update.TabIndex = 15;
             this.button_update.Text = "Редактировать";
             this.button_update.UseVisualStyleBackColor = false;
@@ -180,10 +178,9 @@
             this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_add.ForeColor = System.Drawing.Color.White;
-            this.button_add.Location = new System.Drawing.Point(16, 432);
-            this.button_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_add.Location = new System.Drawing.Point(12, 351);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(213, 36);
+            this.button_add.Size = new System.Drawing.Size(160, 29);
             this.button_add.TabIndex = 14;
             this.button_add.Text = "Добавить";
             this.button_add.UseVisualStyleBackColor = false;
@@ -199,29 +196,28 @@
             this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_delete.ForeColor = System.Drawing.Color.White;
-            this.button_delete.Location = new System.Drawing.Point(458, 433);
-            this.button_delete.Margin = new System.Windows.Forms.Padding(4);
+            this.button_delete.Location = new System.Drawing.Point(344, 352);
             this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(213, 36);
+            this.button_delete.Size = new System.Drawing.Size(160, 29);
             this.button_delete.TabIndex = 19;
             this.button_delete.Text = "Удалить";
             this.button_delete.UseVisualStyleBackColor = false;
             // 
-            // WorkedTimeForm
+            // WorkedTimesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 482);
+            this.ClientSize = new System.Drawing.Size(734, 392);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.pictureBox_search);
             this.Controls.Add(this.textBox_search);
             this.Controls.Add(this.button_update);
             this.Controls.Add(this.button_add);
-            this.Controls.Add(this.dataGridView_employees);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "WorkedTimeForm";
+            this.Controls.Add(this.dataGridView_workedTimes);
+            this.Name = "WorkedTimesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Учет отработанного времени";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_employees)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_workedTimes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_search)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -229,7 +225,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView_employees;
+        private System.Windows.Forms.DataGridView dataGridView_workedTimes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

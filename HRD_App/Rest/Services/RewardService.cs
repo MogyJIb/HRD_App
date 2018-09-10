@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HRD_App.Rest.Services
 {
-    class RewardService : Service<Holiday>, IRewardService
+    public class RewardService : Service<Reward>, IRewardService
     {
         public const string NAME = "rewards";
 

@@ -185,7 +185,7 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "UpdateRewardsForm";
-            this.Text = "UpdateRewardsForm";
+            this.Text = "Учет поощрений";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

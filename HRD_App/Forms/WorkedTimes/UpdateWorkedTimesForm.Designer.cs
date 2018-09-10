@@ -174,7 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(510, 118);
+            this.ClientSize = new System.Drawing.Size(520, 118);
             this.Controls.Add(this.dateTimePicker_leavingTime);
             this.Controls.Add(this.textBox_id);
             this.Controls.Add(this.label10);
@@ -189,7 +189,7 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "UpdateWorkedTimesForm";
-            this.Text = "UpdateWorkedTimeForm";
+            this.Text = "Учет отработанного времени";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

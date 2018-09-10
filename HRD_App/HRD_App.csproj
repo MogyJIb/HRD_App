@@ -79,28 +79,28 @@
   <ItemGroup>
     <Compile Include="Errors\ApiException.cs" />
     <Compile Include="Errors\NonExistentLoginException.cs" />
-    <Compile Include="Forms\EmployeesForm.cs">
+    <Compile Include="Forms\Employees\EmployeesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EmployeesForm.Designer.cs">
+    <Compile Include="Forms\Employees\EmployeesForm.Designer.cs">
       <DependentUpon>EmployeesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ResumesForm.cs">
+    <Compile Include="Forms\Resumes\ResumesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ResumesForm.Designer.cs">
+    <Compile Include="Forms\Resumes\ResumesForm.Designer.cs">
       <DependentUpon>ResumesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RewardsForm.cs">
+    <Compile Include="Forms\Rewards\RewardsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RewardsForm.Designer.cs">
+    <Compile Include="Forms\Rewards\RewardsForm.Designer.cs">
       <DependentUpon>RewardsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UpdateHolidaysForm.cs">
+    <Compile Include="Forms\Holidays\UpdateHolidaysForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\UpdateHolidaysForm.Designer.cs">
+    <Compile Include="Forms\Holidays\UpdateHolidaysForm.Designer.cs">
       <DependentUpon>UpdateHolidaysForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Errors\WrongPasswordException.cs" />
@@ -116,10 +116,10 @@
     <Compile Include="Forms\Departments\DepartmentsForm.Designer.cs">
       <DependentUpon>DepartmentsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HolidaysForm.cs">
+    <Compile Include="Forms\Holidays\HolidaysForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HolidaysForm.Designer.cs">
+    <Compile Include="Forms\Holidays\HolidaysForm.Designer.cs">
       <DependentUpon>HolidaysForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HRDForm.cs">
@@ -128,10 +128,10 @@
     <Compile Include="Forms\HRDForm.Designer.cs">
       <DependentUpon>HRDForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PositionsForm.cs">
+    <Compile Include="Forms\Positions\PositionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PositionsForm.Designer.cs">
+    <Compile Include="Forms\Positions\PositionsForm.Designer.cs">
       <DependentUpon>PositionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Departments\UpdateDepartmentsForm.cs">
@@ -140,56 +140,63 @@
     <Compile Include="Forms\Departments\UpdateDepartmentsForm.Designer.cs">
       <DependentUpon>UpdateDepartmentsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UpdateEmployeesForm.cs">
+    <Compile Include="Forms\Employees\UpdateEmployeesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\UpdateEmployeesForm.Designer.cs">
+    <Compile Include="Forms\Employees\UpdateEmployeesForm.Designer.cs">
       <DependentUpon>UpdateEmployeesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UpdatePositionsForm.cs">
+    <Compile Include="Forms\Positions\UpdatePositionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\UpdatePositionsForm.Designer.cs">
+    <Compile Include="Forms\Positions\UpdatePositionsForm.Designer.cs">
       <DependentUpon>UpdatePositionsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UpdateResumesForm.cs">
+    <Compile Include="Forms\Resumes\UpdateResumesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\UpdateResumesForm.Designer.cs">
+    <Compile Include="Forms\Resumes\UpdateResumesForm.Designer.cs">
       <DependentUpon>UpdateResumesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UpdateRewardsForm.cs">
+    <Compile Include="Forms\Rewards\UpdateRewardsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\UpdateRewardsForm.Designer.cs">
+    <Compile Include="Forms\Rewards\UpdateRewardsForm.Designer.cs">
       <DependentUpon>UpdateRewardsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UpdateVacanciesForm.cs">
+    <Compile Include="Forms\Vacancies\UpdateVacanciesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\UpdateVacanciesForm.Designer.cs">
+    <Compile Include="Forms\Vacancies\UpdateVacanciesForm.Designer.cs">
       <DependentUpon>UpdateVacanciesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UpdateWorkedTimeForm.cs">
+    <Compile Include="Forms\WorkedTimes\UpdateWorkedTimesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\UpdateWorkedTimeForm.Designer.cs">
-      <DependentUpon>UpdateWorkedTimeForm.cs</DependentUpon>
+    <Compile Include="Forms\WorkedTimes\UpdateWorkedTimesForm.Designer.cs">
+      <DependentUpon>UpdateWorkedTimesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\VacanciesForm.cs">
+    <Compile Include="Forms\Vacancies\VacanciesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\VacanciesForm.Designer.cs">
+    <Compile Include="Forms\Vacancies\VacanciesForm.Designer.cs">
       <DependentUpon>VacanciesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\WorkedTimeForm.cs">
+    <Compile Include="Forms\WorkedTimes\WorkedTimesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\WorkedTimeForm.Designer.cs">
-      <DependentUpon>WorkedTimeForm.cs</DependentUpon>
+    <Compile Include="Forms\WorkedTimes\WorkedTimesForm.Designer.cs">
+      <DependentUpon>WorkedTimesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Logic\OnValueChangedListener.cs" />
     <Compile Include="Rest\Authenticator.cs" />
+    <Compile Include="Rest\Interfaces\IEmployeeService.cs" />
+    <Compile Include="Rest\Interfaces\IHolidayService.cs" />
+    <Compile Include="Rest\Interfaces\IPositionService.cs" />
+    <Compile Include="Rest\Interfaces\IResumeService.cs" />
+    <Compile Include="Rest\Interfaces\IRewardService.cs" />
+    <Compile Include="Rest\Interfaces\IVacancyService.cs" />
+    <Compile Include="Rest\Interfaces\IWorkedTimeService.cs" />
     <Compile Include="Rest\IService.cs" />
     <Compile Include="Rest\Service.cs" />
     <Compile Include="Rest\Services\AccountService.cs" />
@@ -199,17 +206,24 @@
     <Compile Include="Rest\Interfaces\IAccountService.cs" />
     <Compile Include="Rest\Interfaces\IDepartmentService.cs" />
     <Compile Include="Rest\RestApi.cs" />
+    <Compile Include="Rest\Services\EmployeeService.cs" />
+    <Compile Include="Rest\Services\HolidayService.cs" />
+    <Compile Include="Rest\Services\PositionService.cs" />
+    <Compile Include="Rest\Services\ResumeService.cs" />
+    <Compile Include="Rest\Services\RewardService.cs" />
+    <Compile Include="Rest\Services\VacancyService.cs" />
+    <Compile Include="Rest\Services\WorkedTimeService.cs" />
     <Compile Include="Utils\UrlArgsUtil.cs" />
-    <EmbeddedResource Include="Forms\EmployeesForm.resx">
+    <EmbeddedResource Include="Forms\Employees\EmployeesForm.resx">
       <DependentUpon>EmployeesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ResumesForm.resx">
+    <EmbeddedResource Include="Forms\Resumes\ResumesForm.resx">
       <DependentUpon>ResumesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RewardsForm.resx">
+    <EmbeddedResource Include="Forms\Rewards\RewardsForm.resx">
       <DependentUpon>RewardsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UpdateHolidaysForm.resx">
+    <EmbeddedResource Include="Forms\Holidays\UpdateHolidaysForm.resx">
       <DependentUpon>UpdateHolidaysForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AuthorizationForm.resx">
@@ -218,41 +232,41 @@
     <EmbeddedResource Include="Forms\Departments\DepartmentsForm.resx">
       <DependentUpon>DepartmentsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HolidaysForm.resx">
+    <EmbeddedResource Include="Forms\Holidays\HolidaysForm.resx">
       <DependentUpon>HolidaysForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HRDForm.resx">
       <DependentUpon>HRDForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PositionsForm.resx">
+    <EmbeddedResource Include="Forms\Positions\PositionsForm.resx">
       <DependentUpon>PositionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Departments\UpdateDepartmentsForm.resx">
       <DependentUpon>UpdateDepartmentsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UpdateEmployeesForm.resx">
+    <EmbeddedResource Include="Forms\Employees\UpdateEmployeesForm.resx">
       <DependentUpon>UpdateEmployeesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UpdatePositionsForm.resx">
+    <EmbeddedResource Include="Forms\Positions\UpdatePositionsForm.resx">
       <DependentUpon>UpdatePositionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UpdateResumesForm.resx">
+    <EmbeddedResource Include="Forms\Resumes\UpdateResumesForm.resx">
       <DependentUpon>UpdateResumesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UpdateRewardsForm.resx">
+    <EmbeddedResource Include="Forms\Rewards\UpdateRewardsForm.resx">
       <DependentUpon>UpdateRewardsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UpdateVacanciesForm.resx">
+    <EmbeddedResource Include="Forms\Vacancies\UpdateVacanciesForm.resx">
       <DependentUpon>UpdateVacanciesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UpdateWorkedTimeForm.resx">
-      <DependentUpon>UpdateWorkedTimeForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\WorkedTimes\UpdateWorkedTimesForm.resx">
+      <DependentUpon>UpdateWorkedTimesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\VacanciesForm.resx">
+    <EmbeddedResource Include="Forms\Vacancies\VacanciesForm.resx">
       <DependentUpon>VacanciesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WorkedTimeForm.resx">
-      <DependentUpon>WorkedTimeForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\WorkedTimes\WorkedTimesForm.resx">
+      <DependentUpon>WorkedTimesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -279,19 +293,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\search_48835.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\11.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\2,.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\baseline_search_white_18dp.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\baseline_search_white_18dp1.png" />
+    <Content Include="Resources\search_48835.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HRD_App.Rest.Services
 {
-    class PositionService : Service<Position>, IPositionService
+    public class PositionService : Service<Position>, IPositionService
     {
         public const string NAME = "positions";
 

@@ -207,7 +207,7 @@
             this.Controls.Add(this.textBox_employeeId);
             this.Controls.Add(this.label1);
             this.Name = "UpdateHolidaysForm";
-            this.Text = "UpdateHolidaysForm";
+            this.Text = "Учет отпусков";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

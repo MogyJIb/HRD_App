@@ -308,7 +308,7 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "UpdateResumesForm";
-            this.Text = "UpdateResumesForm";
+            this.Text = "Резюме";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

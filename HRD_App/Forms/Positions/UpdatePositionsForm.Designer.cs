@@ -204,7 +204,7 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "UpdatePositionsForm";
-            this.Text = "UpdatePositionsForm";
+            this.Text = "Должность";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

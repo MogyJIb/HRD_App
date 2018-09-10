@@ -92,11 +92,11 @@
             this.button_save.Text = "Сохранить";
             this.button_save.UseVisualStyleBackColor = false;
             // 
-            // comboBox_amount
+            // comboBox_number
             // 
             this.comboBox_number.FormattingEnabled = true;
             this.comboBox_number.Location = new System.Drawing.Point(327, 6);
-            this.comboBox_number.Name = "comboBox_amount";
+            this.comboBox_number.Name = "comboBox_number";
             this.comboBox_number.Size = new System.Drawing.Size(138, 21);
             this.comboBox_number.TabIndex = 39;
             // 
@@ -145,7 +145,7 @@
             this.Controls.Add(this.label4);
             this.MaximizeBox = false;
             this.Name = "UpdateVacanciesForm";
-            this.Text = "Редактирование вакансий";
+            this.Text = "Вакансия";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

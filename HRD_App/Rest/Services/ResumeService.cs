@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HRD_App.Rest.Services
 {
-    class ResumeService : Service<Resume>, IResumeService
+    public class ResumeService : Service<Resume>, IResumeService
     {
         public const string NAME = "resumes";
 

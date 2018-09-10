@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HRD_App.Rest.Services
 {
-    class WorkedTimeService : Service<WorkedTime>, IWorkedTimeService
+    public class WorkedTimeService : Service<WorkedTime>, IWorkedTimeService
     {
         public const string NAME = "worked_times";
 

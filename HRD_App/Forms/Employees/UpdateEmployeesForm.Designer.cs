@@ -291,7 +291,7 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "UpdateEmployeesForm";
-            this.Text = "Сотрудники";
+            this.Text = "Сотрудник";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);

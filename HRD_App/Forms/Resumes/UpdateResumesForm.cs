@@ -58,7 +58,7 @@ namespace HRD_App.Forms
                 resume = await RestApi.ResumeService.Get(resumeId);
 
                 textBox_id.Text = resume.ResumeId.ToString();
-                comboBox_vacancy.Text = resume.Vacancy.Name.ToString();
+                comboBox_vacancy.Text = resume.VacancyId.ToString();
                 textBox_firstName.Text = resume.FirstName;
                 textBox_lastName.Text = resume.LastName;
                 textBox_patronymic.Text = resume.Patronymic;

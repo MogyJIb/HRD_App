@@ -89,20 +89,24 @@ namespace HRD_App.Forms
         {
             if (departments.Count < 1) return;
 
-            int row = dataGridView_departments.CurrentRow.Index;
-            int id = (int)dataGridView_departments[0, row].Value;
+            DialogResult result= MessageBox.Show("Вы действительно хотите удалить запись?", "", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                int row = dataGridView_departments.CurrentRow.Index;
+                int id = (int)dataGridView_departments[0, row].Value;
 
-            try
-            {
-                Department department = await RestApi.DepartmentService.Delete(id);
-                DeleteDepartment(department);
-                Filter();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-                Console.WriteLine(exception.Message);
-                Console.WriteLine(exception.StackTrace);
+                try
+                {
+                    Department department = await RestApi.DepartmentService.Delete(id);
+                    DeleteDepartment(department);
+                    Filter();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                    Console.WriteLine(exception.Message);
+                    Console.WriteLine(exception.StackTrace);
+                }
             }
         }
 
