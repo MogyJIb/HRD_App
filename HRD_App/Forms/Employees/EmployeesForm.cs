@@ -65,6 +65,7 @@ namespace HRD_App.Forms
             oldEmployee.Phone = newEmployee.Phone;
             oldEmployee.Education = newEmployee.Education;
             oldEmployee.EmploymentDate = newEmployee.EmploymentDate;
+            oldEmployee.Position = newEmployee.Position;
         }
 
         private void DeleteEmployee(Employee employee)

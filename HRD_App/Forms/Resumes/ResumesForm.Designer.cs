@@ -99,6 +99,7 @@
             this.dataGridView_resumes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dataGridView_resumes.Location = new System.Drawing.Point(16, 47);
             this.dataGridView_resumes.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView_resumes.MultiSelect = false;
             this.dataGridView_resumes.Name = "dataGridView_resumes";
             this.dataGridView_resumes.ReadOnly = true;
             this.dataGridView_resumes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -107,6 +108,7 @@
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView_resumes.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView_resumes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_resumes.Size = new System.Drawing.Size(945, 378);
             this.dataGridView_resumes.TabIndex = 0;
             // 

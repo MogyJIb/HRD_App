@@ -67,6 +67,7 @@ namespace HRD_App.Forms
             oldResume.Education = newResume.Education;
             oldResume.Institution = newResume.Institution;
             oldResume.Specialty = newResume.Specialty;
+            oldResume.Vacancy = newResume.Vacancy;
         }
 
         private void DeleteResume(Resume resume)

@@ -46,7 +46,7 @@
             // textBox_id
             // 
             this.textBox_id.Location = new System.Drawing.Point(103, 7);
-            this.textBox_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_id.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_id.Name = "textBox_id";
             this.textBox_id.Size = new System.Drawing.Size(183, 22);
             this.textBox_id.TabIndex = 27;
@@ -73,7 +73,7 @@
             this.button_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_cancel.ForeColor = System.Drawing.Color.White;
             this.button_cancel.Location = new System.Drawing.Point(456, 84);
-            this.button_cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_cancel.Margin = new System.Windows.Forms.Padding(4);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(124, 36);
             this.button_cancel.TabIndex = 46;
@@ -91,7 +91,7 @@
             this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_save.ForeColor = System.Drawing.Color.White;
             this.button_save.Location = new System.Drawing.Point(324, 84);
-            this.button_save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_save.Margin = new System.Windows.Forms.Padding(4);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(124, 36);
             this.button_save.TabIndex = 45;
@@ -112,7 +112,7 @@
             // textBox_cabinet
             // 
             this.textBox_cabinet.Location = new System.Drawing.Point(396, 7);
-            this.textBox_cabinet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_cabinet.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_cabinet.Name = "textBox_cabinet";
             this.textBox_cabinet.Size = new System.Drawing.Size(183, 22);
             this.textBox_cabinet.TabIndex = 30;
@@ -130,7 +130,7 @@
             // textBox_name
             // 
             this.textBox_name.Location = new System.Drawing.Point(103, 39);
-            this.textBox_name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_name.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_name.Name = "textBox_name";
             this.textBox_name.Size = new System.Drawing.Size(183, 22);
             this.textBox_name.TabIndex = 29;
@@ -148,8 +148,8 @@
             // maskedTextBox_phone
             // 
             this.maskedTextBox_phone.Location = new System.Drawing.Point(396, 39);
-            this.maskedTextBox_phone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.maskedTextBox_phone.Mask = "+375 00 000-00-00";
+            this.maskedTextBox_phone.Margin = new System.Windows.Forms.Padding(4);
+            this.maskedTextBox_phone.Mask = "00-00-00";
             this.maskedTextBox_phone.Name = "maskedTextBox_phone";
             this.maskedTextBox_phone.Size = new System.Drawing.Size(183, 22);
             this.maskedTextBox_phone.TabIndex = 48;
@@ -174,7 +174,7 @@
             this.Controls.Add(this.textBox_name);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "UpdateDepartmentsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

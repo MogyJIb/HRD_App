@@ -33,7 +33,7 @@ namespace HRD_App.Forms
             dataGridView_rewards.DataSource = rewards;
             dataGridView_rewards.Columns["Deleted"].Visible = false;
             dataGridView_rewards.Columns["Employee"].Visible = false;
-            dataGridView_rewards.Columns["EmployeeId"].Visible = false;
+            dataGridView_rewards.Columns["EmployeeName"].Visible = false;
 
 
             AddRewards(RestApi.RewardService.GetAll(false).Result);
@@ -61,6 +61,7 @@ namespace HRD_App.Forms
             oldReward.Amount = newReward.Amount;
             oldReward.Reason = newReward.Reason;
             oldReward.Deleted = newReward.Deleted;
+            oldReward.Employee = newReward.Employee;
         }
 
         private void DeleteReward(Reward reward)

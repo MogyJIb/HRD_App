@@ -48,7 +48,7 @@
             // textBox_id
             // 
             this.textBox_id.Location = new System.Drawing.Point(140, 7);
-            this.textBox_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_id.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_id.Name = "textBox_id";
             this.textBox_id.Size = new System.Drawing.Size(183, 22);
             this.textBox_id.TabIndex = 27;
@@ -75,7 +75,7 @@
             this.button_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_cancel.ForeColor = System.Drawing.Color.White;
             this.button_cancel.Location = new System.Drawing.Point(487, 100);
-            this.button_cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_cancel.Margin = new System.Windows.Forms.Padding(4);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(124, 36);
             this.button_cancel.TabIndex = 46;
@@ -93,18 +93,19 @@
             this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_save.ForeColor = System.Drawing.Color.White;
             this.button_save.Location = new System.Drawing.Point(355, 100);
-            this.button_save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_save.Margin = new System.Windows.Forms.Padding(4);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(124, 36);
             this.button_save.TabIndex = 45;
             this.button_save.Text = "Сохранить";
             this.button_save.UseVisualStyleBackColor = false;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // dateTimePicker_date
             // 
             this.dateTimePicker_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker_date.Location = new System.Drawing.Point(140, 71);
-            this.dateTimePicker_date.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker_date.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker_date.Name = "dateTimePicker_date";
             this.dateTimePicker_date.Size = new System.Drawing.Size(183, 22);
             this.dateTimePicker_date.TabIndex = 34;
@@ -113,7 +114,7 @@
             // textBox_reason
             // 
             this.textBox_reason.Location = new System.Drawing.Point(427, 39);
-            this.textBox_reason.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_reason.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_reason.Name = "textBox_reason";
             this.textBox_reason.Size = new System.Drawing.Size(183, 22);
             this.textBox_reason.TabIndex = 36;
@@ -131,7 +132,7 @@
             // textBox_amount
             // 
             this.textBox_amount.Location = new System.Drawing.Point(427, 7);
-            this.textBox_amount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_amount.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_amount.Name = "textBox_amount";
             this.textBox_amount.Size = new System.Drawing.Size(183, 22);
             this.textBox_amount.TabIndex = 32;
@@ -197,12 +198,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "UpdateRewardsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Учет поощрений";
-            this.Click += new System.EventHandler(this.button_save_Click);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

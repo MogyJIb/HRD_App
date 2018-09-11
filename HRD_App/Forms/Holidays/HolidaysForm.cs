@@ -33,7 +33,7 @@ namespace HRD_App.Forms
             dataGridView_holidays.DataSource = holidays;
             dataGridView_holidays.Columns["Deleted"].Visible = false;
             dataGridView_holidays.Columns["Employee"].Visible = false;
-            dataGridView_holidays.Columns["EmployeeId"].Visible = false;
+            dataGridView_holidays.Columns["EmployeeName"].Visible = false;
 
 
             AddHolidays(RestApi.HolidayService.GetAll(false).Result);
@@ -62,6 +62,7 @@ namespace HRD_App.Forms
             oldHoliday.FinalDate = newHoliday.FinalDate;
             oldHoliday.Type = newHoliday.Type;
             oldHoliday.Salary = newHoliday.Salary;
+            oldHoliday.Employee = newHoliday.Employee;
         }
 
         private void DeleteHoliday(Holiday holiday)

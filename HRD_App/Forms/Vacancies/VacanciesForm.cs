@@ -59,6 +59,7 @@ namespace HRD_App.Forms
             oldVacancy.PositionId = newVacancy.PositionId;
             oldVacancy.Deleted = newVacancy.Deleted;
             oldVacancy.Number = newVacancy.Number;
+            oldVacancy.Position = newVacancy.Position;
         }
 
         private void DeleteVacancy(Vacancy vacancy)

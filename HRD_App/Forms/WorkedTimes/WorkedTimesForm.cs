@@ -33,7 +33,7 @@ namespace HRD_App.Forms
             dataGridView_workedTimes.DataSource = workedTimes;
             dataGridView_workedTimes.Columns["Deleted"].Visible = false;
             dataGridView_workedTimes.Columns["Employee"].Visible = false;
-            dataGridView_workedTimes.Columns["EmployeeId"].Visible = false;
+            dataGridView_workedTimes.Columns["EmployeeName"].Visible = false;
 
 
             AddWorkedTimes(RestApi.WorkedTimeService.GetAll(false).Result);
@@ -61,6 +61,7 @@ namespace HRD_App.Forms
             oldWorkedTime.Date = newWorkedTime.Date;
             oldWorkedTime.ArrivalTime = newWorkedTime.ArrivalTime;
             oldWorkedTime.LeavingTime = newWorkedTime.LeavingTime;
+            oldWorkedTime.Employee = newWorkedTime.Employee;
         }
 
         private void DeleteWorkedTime(WorkedTime workedTime)
