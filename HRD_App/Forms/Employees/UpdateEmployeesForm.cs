@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace HRD_App.Forms
 {
-    public partial class UpdateEmployeesForm : Form
+    public partial class UpdateEmployeesForm : BaseForm
     {
         private Dictionary<int, Position> positions;
         private Employee employee;
@@ -79,9 +79,7 @@ namespace HRD_App.Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
-                Console.WriteLine(exception.Message);
-                Close();
+                HandleError(exception);
             }
         }
 
@@ -120,9 +118,7 @@ namespace HRD_App.Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
-                Console.WriteLine(exception.Message);
-                Console.WriteLine(exception.StackTrace);
+                HandleError(exception);
             }
         }
 

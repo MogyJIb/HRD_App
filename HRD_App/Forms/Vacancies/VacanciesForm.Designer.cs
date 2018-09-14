@@ -32,14 +32,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView_vacancies = new System.Windows.Forms.DataGridView();
+            this.VacancyIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PositionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox_search = new System.Windows.Forms.PictureBox();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.button_update = new System.Windows.Forms.Button();
             this.button_add = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
-            this.VacancyIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PositionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_vacancies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_search)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +50,8 @@
             this.dataGridView_vacancies.AllowUserToDeleteRows = false;
             this.dataGridView_vacancies.AllowUserToResizeColumns = false;
             this.dataGridView_vacancies.AllowUserToResizeRows = false;
-            this.dataGridView_vacancies.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView_vacancies.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_vacancies.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_vacancies.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -95,6 +96,28 @@
             this.dataGridView_vacancies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_vacancies.Size = new System.Drawing.Size(945, 378);
             this.dataGridView_vacancies.TabIndex = 0;
+            this.dataGridView_vacancies.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_vacancies_CellClick);
+            // 
+            // VacancyIdColumn
+            // 
+            this.VacancyIdColumn.DataPropertyName = "VacancyId";
+            this.VacancyIdColumn.HeaderText = "Код";
+            this.VacancyIdColumn.Name = "VacancyIdColumn";
+            this.VacancyIdColumn.ReadOnly = true;
+            // 
+            // PositionColumn
+            // 
+            this.PositionColumn.DataPropertyName = "PositionName";
+            this.PositionColumn.HeaderText = "Должность";
+            this.PositionColumn.Name = "PositionColumn";
+            this.PositionColumn.ReadOnly = true;
+            // 
+            // NumberColumn
+            // 
+            this.NumberColumn.DataPropertyName = "Number";
+            this.NumberColumn.HeaderText = "Количество";
+            this.NumberColumn.Name = "NumberColumn";
+            this.NumberColumn.ReadOnly = true;
             // 
             // pictureBox_search
             // 
@@ -120,6 +143,8 @@
             this.textBox_search.TabIndex = 16;
             this.textBox_search.Text = "Поиск";
             this.textBox_search.TextChanged += new System.EventHandler(this.textBox_search_TextChanged);
+            this.textBox_search.Enter += new System.EventHandler(this.textBox_search_Enter);
+            this.textBox_search.Leave += new System.EventHandler(this.textBox_search_Leave);
             // 
             // button_update
             // 
@@ -181,27 +206,6 @@
             this.button_delete.UseVisualStyleBackColor = false;
             this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
-            // VacancyIdColumn
-            // 
-            this.VacancyIdColumn.DataPropertyName = "VacancyId";
-            this.VacancyIdColumn.HeaderText = "Код";
-            this.VacancyIdColumn.Name = "VacancyIdColumn";
-            this.VacancyIdColumn.ReadOnly = true;
-            // 
-            // PositionColumn
-            // 
-            this.PositionColumn.DataPropertyName = "PositionName";
-            this.PositionColumn.HeaderText = "Должность";
-            this.PositionColumn.Name = "PositionColumn";
-            this.PositionColumn.ReadOnly = true;
-            // 
-            // NumberColumn
-            // 
-            this.NumberColumn.DataPropertyName = "Number";
-            this.NumberColumn.HeaderText = "Количество";
-            this.NumberColumn.Name = "NumberColumn";
-            this.NumberColumn.ReadOnly = true;
-            // 
             // VacanciesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -217,6 +221,7 @@
             this.Name = "VacanciesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Вакансии";
+            this.Shown += new System.EventHandler(this.VacanciesForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_vacancies)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_search)).EndInit();
             this.ResumeLayout(false);

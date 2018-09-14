@@ -32,17 +32,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView_positions = new System.Windows.Forms.DataGridView();
-            this.pictureBox_search = new System.Windows.Forms.PictureBox();
-            this.textBox_search = new System.Windows.Forms.TextBox();
-            this.button_update = new System.Windows.Forms.Button();
-            this.button_add = new System.Windows.Forms.Button();
-            this.button_delete = new System.Windows.Forms.Button();
             this.PositionIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DepartmentIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SalaryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DutiesColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RequirementsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox_search = new System.Windows.Forms.PictureBox();
+            this.textBox_search = new System.Windows.Forms.TextBox();
+            this.button_update = new System.Windows.Forms.Button();
+            this.button_add = new System.Windows.Forms.Button();
+            this.button_delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_positions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_search)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +53,8 @@
             this.dataGridView_positions.AllowUserToDeleteRows = false;
             this.dataGridView_positions.AllowUserToResizeColumns = false;
             this.dataGridView_positions.AllowUserToResizeRows = false;
-            this.dataGridView_positions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView_positions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_positions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_positions.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -101,6 +102,49 @@
             this.dataGridView_positions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_positions.Size = new System.Drawing.Size(945, 378);
             this.dataGridView_positions.TabIndex = 0;
+            this.dataGridView_positions.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_positions_CellClick);
+            // 
+            // PositionIdColumn
+            // 
+            this.PositionIdColumn.DataPropertyName = "PositionId";
+            this.PositionIdColumn.HeaderText = "Код";
+            this.PositionIdColumn.Name = "PositionIdColumn";
+            this.PositionIdColumn.ReadOnly = true;
+            // 
+            // NameColumn
+            // 
+            this.NameColumn.DataPropertyName = "Name";
+            this.NameColumn.HeaderText = "Название";
+            this.NameColumn.Name = "NameColumn";
+            this.NameColumn.ReadOnly = true;
+            // 
+            // DepartmentIdColumn
+            // 
+            this.DepartmentIdColumn.DataPropertyName = "DepartmentName";
+            this.DepartmentIdColumn.HeaderText = "Отдел";
+            this.DepartmentIdColumn.Name = "DepartmentIdColumn";
+            this.DepartmentIdColumn.ReadOnly = true;
+            // 
+            // SalaryColumn
+            // 
+            this.SalaryColumn.DataPropertyName = "Salary";
+            this.SalaryColumn.HeaderText = "Зарплата";
+            this.SalaryColumn.Name = "SalaryColumn";
+            this.SalaryColumn.ReadOnly = true;
+            // 
+            // DutiesColumn
+            // 
+            this.DutiesColumn.DataPropertyName = "Duties";
+            this.DutiesColumn.HeaderText = "Обязанности";
+            this.DutiesColumn.Name = "DutiesColumn";
+            this.DutiesColumn.ReadOnly = true;
+            // 
+            // RequirementsColumn
+            // 
+            this.RequirementsColumn.DataPropertyName = "Requirements";
+            this.RequirementsColumn.HeaderText = "Требования";
+            this.RequirementsColumn.Name = "RequirementsColumn";
+            this.RequirementsColumn.ReadOnly = true;
             // 
             // pictureBox_search
             // 
@@ -126,6 +170,8 @@
             this.textBox_search.TabIndex = 16;
             this.textBox_search.Text = "Поиск";
             this.textBox_search.TextChanged += new System.EventHandler(this.textBox_search_TextChanged);
+            this.textBox_search.Enter += new System.EventHandler(this.textBox_search_Enter);
+            this.textBox_search.Leave += new System.EventHandler(this.textBox_search_Leave);
             // 
             // button_update
             // 
@@ -187,48 +233,6 @@
             this.button_delete.UseVisualStyleBackColor = false;
             this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
-            // PositionIdColumn
-            // 
-            this.PositionIdColumn.DataPropertyName = "PositionId";
-            this.PositionIdColumn.HeaderText = "Код";
-            this.PositionIdColumn.Name = "PositionIdColumn";
-            this.PositionIdColumn.ReadOnly = true;
-            // 
-            // NameColumn
-            // 
-            this.NameColumn.DataPropertyName = "Name";
-            this.NameColumn.HeaderText = "Название";
-            this.NameColumn.Name = "NameColumn";
-            this.NameColumn.ReadOnly = true;
-            // 
-            // DepartmentIdColumn
-            // 
-            this.DepartmentIdColumn.DataPropertyName = "DepartmentName";
-            this.DepartmentIdColumn.HeaderText = "Отдел";
-            this.DepartmentIdColumn.Name = "DepartmentIdColumn";
-            this.DepartmentIdColumn.ReadOnly = true;
-            // 
-            // SalaryColumn
-            // 
-            this.SalaryColumn.DataPropertyName = "Salary";
-            this.SalaryColumn.HeaderText = "Зарплата";
-            this.SalaryColumn.Name = "SalaryColumn";
-            this.SalaryColumn.ReadOnly = true;
-            // 
-            // DutiesColumn
-            // 
-            this.DutiesColumn.DataPropertyName = "Duties";
-            this.DutiesColumn.HeaderText = "Обязанности";
-            this.DutiesColumn.Name = "DutiesColumn";
-            this.DutiesColumn.ReadOnly = true;
-            // 
-            // RequirementsColumn
-            // 
-            this.RequirementsColumn.DataPropertyName = "Requirements";
-            this.RequirementsColumn.HeaderText = "Требования";
-            this.RequirementsColumn.Name = "RequirementsColumn";
-            this.RequirementsColumn.ReadOnly = true;
-            // 
             // PositionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -244,6 +248,7 @@
             this.Name = "PositionsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Должности";
+            this.Shown += new System.EventHandler(this.PositionsForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_positions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_search)).EndInit();
             this.ResumeLayout(false);

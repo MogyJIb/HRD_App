@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace HRD_App.Forms
 {
-    public partial class UpdateDepartmentsForm : Form
+    public partial class UpdateDepartmentsForm : BaseForm
     {
         private Department department;
         private event OnValueChangedListener<Department> OnValueChanged;
@@ -57,9 +57,7 @@ namespace HRD_App.Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
-                Console.WriteLine(exception.Message);
-                Close();
+                HandleError(exception);
             }
         }
 
@@ -89,9 +87,7 @@ namespace HRD_App.Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
-                Console.WriteLine(exception.Message);
-                Console.WriteLine(exception.StackTrace);
+                HandleError(exception);
             }
         }
 

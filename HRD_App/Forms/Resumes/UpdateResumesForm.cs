@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace HRD_App.Forms
 {
-    public partial class UpdateResumesForm : Form
+    public partial class UpdateResumesForm : BaseForm
     {
         private Dictionary<int, Vacancy> vacancies;
         private Resume resume;
@@ -81,9 +81,7 @@ namespace HRD_App.Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
-                Console.WriteLine(exception.Message);
-                Close();
+                HandleError(exception);
             }
         }
 
@@ -123,9 +121,7 @@ namespace HRD_App.Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
-                Console.WriteLine(exception.Message);
-                Console.WriteLine(exception.StackTrace);
+                HandleError(exception);
             }
         }
 

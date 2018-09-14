@@ -53,7 +53,8 @@
             this.dataGridView_workedTimes.AllowUserToDeleteRows = false;
             this.dataGridView_workedTimes.AllowUserToResizeColumns = false;
             this.dataGridView_workedTimes.AllowUserToResizeRows = false;
-            this.dataGridView_workedTimes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView_workedTimes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_workedTimes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_workedTimes.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -109,6 +110,7 @@
             this.dataGridView_workedTimes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_workedTimes.Size = new System.Drawing.Size(947, 378);
             this.dataGridView_workedTimes.TabIndex = 0;
+            this.dataGridView_workedTimes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_workedTimes_CellClick);
             // 
             // WorkedTimeIdColumn
             // 
@@ -170,6 +172,8 @@
             this.textBox_search.TabIndex = 16;
             this.textBox_search.Text = "Поиск";
             this.textBox_search.TextChanged += new System.EventHandler(this.textBox_search_TextChanged);
+            this.textBox_search.Enter += new System.EventHandler(this.textBox_search_Enter);
+            this.textBox_search.Leave += new System.EventHandler(this.textBox_search_Leave);
             // 
             // button_update
             // 
@@ -246,6 +250,7 @@
             this.Name = "WorkedTimesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Учет отработанного времени";
+            this.Shown += new System.EventHandler(this.WorkedTimesForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_workedTimes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_search)).EndInit();
             this.ResumeLayout(false);

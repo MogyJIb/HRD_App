@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace HRD_App.Forms
 {
-    public partial class RewardsForm : Form
+    public partial class RewardsForm : BaseForm
     {
         private BindingList<Reward> rewards;
 
@@ -25,6 +25,11 @@ namespace HRD_App.Forms
             new AuthorizationForm().ShowDialog();
 
             init();
+
+            button_update.BackColor = Color.Gray;
+            button_update.Enabled = false;
+            button_delete.BackColor = Color.Gray;
+            button_delete.Enabled = false;
         }
 
         public void init()
@@ -107,9 +112,7 @@ namespace HRD_App.Forms
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(exception.Message);
-                    Console.WriteLine(exception.Message);
-                    Console.WriteLine(exception.StackTrace);
+                    HandleError(exception);
                 }
             }
         }
@@ -161,6 +164,19 @@ namespace HRD_App.Forms
                 textBox_search.ForeColor = Color.Gray;
                 textBox_search.Text = "Поиск";
             }
+        }
+
+        private void dataGridView_rewards_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            button_update.BackColor = Color.CadetBlue;
+            button_update.Enabled = true;
+            button_delete.BackColor = Color.CadetBlue;
+            button_delete.Enabled = true;
+        }
+
+        private void RewardsForm_Shown(object sender, EventArgs e)
+        {
+            dataGridView_rewards.ClearSelection();
         }
     }
 }

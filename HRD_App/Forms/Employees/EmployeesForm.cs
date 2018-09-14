@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace HRD_App.Forms
 {
-    public partial class EmployeesForm : Form
+    public partial class EmployeesForm : BaseForm
     {
         private BindingList<Employee> employees;
 
@@ -22,12 +22,15 @@ namespace HRD_App.Forms
         {
             InitializeComponent();
 
-            new AuthorizationForm().ShowDialog();
-
             init();
+
+            button_update.BackColor = Color.Gray;
+            button_update.Enabled = false;
+            button_delete.BackColor = Color.Gray;
+            button_delete.Enabled = false;
         }
 
-        public void init()
+        public async void init()
         {
             employees = new BindingList<Employee>();
             dataGridView_employees.DataSource = employees;
@@ -35,7 +38,7 @@ namespace HRD_App.Forms
             dataGridView_employees.Columns["Position"].Visible = false;
             dataGridView_employees.Columns["PositionId"].Visible = false;
 
-            AddEmployees(RestApi.EmployeeService.GetAll(false).Result);
+            AddEmployees(await RestApi.EmployeeService.GetAll(false));
             dataGridView_employees.Refresh();
         }
 
@@ -110,9 +113,7 @@ namespace HRD_App.Forms
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(exception.Message);
-                    Console.WriteLine(exception.Message);
-                    Console.WriteLine(exception.StackTrace);
+                    HandleError(exception);
                 }
             }
         }
@@ -169,6 +170,19 @@ namespace HRD_App.Forms
                 textBox_search.ForeColor = Color.Gray;
                 textBox_search.Text = "Поиск";
             }
+        }
+
+        private void dataGridView_employees_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            button_update.BackColor = Color.CadetBlue;
+            button_update.Enabled = true;
+            button_delete.BackColor = Color.CadetBlue;
+            button_delete.Enabled = true;
+        }
+
+        private void EmployeesForm_Shown(object sender, EventArgs e)
+        {
+            dataGridView_employees.ClearSelection();
         }
     }
 }

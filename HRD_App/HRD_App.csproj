@@ -79,11 +79,26 @@
   <ItemGroup>
     <Compile Include="Errors\ApiException.cs" />
     <Compile Include="Errors\NonExistentLoginException.cs" />
+    <Compile Include="Forms\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Employees\EmployeesForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Employees\EmployeesForm.Designer.cs">
       <DependentUpon>EmployeesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FiredEmployees\FiredEmployeesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FiredEmployees\FiredEmployeesForm.Designer.cs">
+      <DependentUpon>FiredEmployeesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FiredEmployees\UpdateFiredEmployeesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FiredEmployees\UpdateFiredEmployeesForm.Designer.cs">
+      <DependentUpon>UpdateFiredEmployeesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Resumes\ResumesForm.cs">
       <SubType>Form</SubType>
@@ -122,11 +137,11 @@
     <Compile Include="Forms\Holidays\HolidaysForm.Designer.cs">
       <DependentUpon>HolidaysForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HRDForm.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HRDForm.Designer.cs">
-      <DependentUpon>HRDForm.cs</DependentUpon>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Positions\PositionsForm.cs">
       <SubType>Form</SubType>
@@ -191,6 +206,7 @@
     <Compile Include="Logic\OnValueChangedListener.cs" />
     <Compile Include="Rest\Authenticator.cs" />
     <Compile Include="Rest\Interfaces\IEmployeeService.cs" />
+    <Compile Include="Rest\Interfaces\IFiredEmployeeService.cs" />
     <Compile Include="Rest\Interfaces\IHolidayService.cs" />
     <Compile Include="Rest\Interfaces\IPositionService.cs" />
     <Compile Include="Rest\Interfaces\IResumeService.cs" />
@@ -207,6 +223,7 @@
     <Compile Include="Rest\Interfaces\IDepartmentService.cs" />
     <Compile Include="Rest\RestApi.cs" />
     <Compile Include="Rest\Services\EmployeeService.cs" />
+    <Compile Include="Rest\Services\FiredEmployeeService.cs" />
     <Compile Include="Rest\Services\HolidayService.cs" />
     <Compile Include="Rest\Services\PositionService.cs" />
     <Compile Include="Rest\Services\ResumeService.cs" />
@@ -216,6 +233,12 @@
     <Compile Include="Utils\UrlArgsUtil.cs" />
     <EmbeddedResource Include="Forms\Employees\EmployeesForm.resx">
       <DependentUpon>EmployeesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FiredEmployees\FiredEmployeesForm.resx">
+      <DependentUpon>FiredEmployeesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FiredEmployees\UpdateFiredEmployeesForm.resx">
+      <DependentUpon>UpdateFiredEmployeesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Resumes\ResumesForm.resx">
       <DependentUpon>ResumesForm.cs</DependentUpon>
@@ -235,8 +258,8 @@
     <EmbeddedResource Include="Forms\Holidays\HolidaysForm.resx">
       <DependentUpon>HolidaysForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HRDForm.resx">
-      <DependentUpon>HRDForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Positions\PositionsForm.resx">
       <DependentUpon>PositionsForm.cs</DependentUpon>

@@ -53,7 +53,8 @@
             this.dataGridView_holidays.AllowUserToDeleteRows = false;
             this.dataGridView_holidays.AllowUserToResizeColumns = false;
             this.dataGridView_holidays.AllowUserToResizeRows = false;
-            this.dataGridView_holidays.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView_holidays.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_holidays.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_holidays.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -100,6 +101,7 @@
             this.dataGridView_holidays.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_holidays.Size = new System.Drawing.Size(947, 378);
             this.dataGridView_holidays.TabIndex = 0;
+            this.dataGridView_holidays.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_holidays_CellClick);
             // 
             // HolidayIdColumn
             // 
@@ -167,6 +169,8 @@
             this.textBox_search.TabIndex = 16;
             this.textBox_search.Text = "Поиск";
             this.textBox_search.TextChanged += new System.EventHandler(this.textBox_search_TextChanged);
+            this.textBox_search.Enter += new System.EventHandler(this.textBox_search_Enter);
+            this.textBox_search.Leave += new System.EventHandler(this.textBox_search_Leave);
             // 
             // button_update
             // 
@@ -243,6 +247,7 @@
             this.Name = "HolidaysForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Учет отпусков";
+            this.Shown += new System.EventHandler(this.HolidaysForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_holidays)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_search)).EndInit();
             this.ResumeLayout(false);

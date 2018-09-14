@@ -45,6 +45,11 @@ namespace HRD_App.Rest
             get { return new EmployeeService(httpClient, args); }
         }
 
+        public static IFiredEmployeeService FiredEmployeeService
+        {
+            get { return new FiredEmployeeService(httpClient, args); }
+        }
+
         public static IHolidayService HolidayService
         {
             get { return new HolidayService(httpClient, args); }

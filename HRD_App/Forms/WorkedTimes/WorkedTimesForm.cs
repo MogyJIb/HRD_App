@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace HRD_App.Forms
 {
-    public partial class WorkedTimesForm : Form
+    public partial class WorkedTimesForm : BaseForm
     {
         private BindingList<WorkedTime> workedTimes;
 
@@ -22,9 +22,12 @@ namespace HRD_App.Forms
         {
             InitializeComponent();
 
-            new AuthorizationForm().ShowDialog();
-
             init();
+
+            button_update.BackColor = Color.Gray;
+            button_update.Enabled = false;
+            button_delete.BackColor = Color.Gray;
+            button_delete.Enabled = false;
         }
 
         public void init()
@@ -107,9 +110,7 @@ namespace HRD_App.Forms
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(exception.Message);
-                    Console.WriteLine(exception.Message);
-                    Console.WriteLine(exception.StackTrace);
+                    HandleError(exception);
                 }
             }
         }
@@ -161,6 +162,19 @@ namespace HRD_App.Forms
                 textBox_search.ForeColor = Color.Gray;
                 textBox_search.Text = "Поиск";
             }
+        }
+
+        private void dataGridView_workedTimes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            button_update.BackColor = Color.CadetBlue;
+            button_update.Enabled = true;
+            button_delete.BackColor = Color.CadetBlue;
+            button_delete.Enabled = true;
+        }
+        
+        private void WorkedTimesForm_Shown(object sender, EventArgs e)
+        {
+            dataGridView_workedTimes.ClearSelection();
         }
     }
 }

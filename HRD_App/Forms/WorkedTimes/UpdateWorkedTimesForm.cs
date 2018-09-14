@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace HRD_App.Forms
 {
-    public partial class UpdateWorkedTimesForm : Form
+    public partial class UpdateWorkedTimesForm : BaseForm
     {
         private Dictionary<int, Employee> employees;
         private WorkedTime workedTime;
@@ -69,9 +69,7 @@ namespace HRD_App.Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
-                Console.WriteLine(exception.Message);
-                Close();
+                HandleError(exception);
             }
         }
 
@@ -105,9 +103,7 @@ namespace HRD_App.Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
-                Console.WriteLine(exception.Message);
-                Console.WriteLine(exception.StackTrace);
+                HandleError(exception);
             }
         }
 

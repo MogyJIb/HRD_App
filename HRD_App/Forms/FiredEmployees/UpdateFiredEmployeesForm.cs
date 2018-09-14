@@ -16,13 +16,13 @@ using System.Windows.Forms;
 
 namespace HRD_App.Forms
 {
-    public partial class UpdateRewardsForm : BaseForm
+    public partial class UpdateFiredEmployeesForm : BaseForm
     {
         private Dictionary<int, Employee> employees;
-        private Reward reward;
-        private event OnValueChangedListener<Reward> OnValueChanged;
+        private FiredEmployee firedEmployee;
+        private event OnValueChangedListener<FiredEmployee> OnValueChanged;
 
-        public UpdateRewardsForm(int rewardId, bool enabled)
+        public UpdateFiredEmployeesForm(int firedEmployeeId, bool enabled)
         {
             InitializeComponent();
 
@@ -31,10 +31,10 @@ namespace HRD_App.Forms
             employees = new Dictionary<int, Employee>();
             loadEmployeesList(employees);
 
-            if (rewardId != -1) setReward(rewardId);
+            if (firedEmployeeId != -1) setFiredEmployee(firedEmployeeId);
         }
 
-        public UpdateRewardsForm SetOnValueChangedListener(OnValueChangedListener<Reward> listener)
+        public UpdateFiredEmployeesForm SetOnValueChangedListener(OnValueChangedListener<FiredEmployee> listener)
         {
             this.OnValueChanged += listener;
             return this;
@@ -50,22 +50,20 @@ namespace HRD_App.Forms
         {
             textBox_id.Enabled = false;
             comboBox_employeeId.Enabled = enabled;
-            dateTimePicker_date.Enabled = enabled;
-            textBox_amount.Enabled = enabled;
+            dateTimePicker_dateOfDismissal.Enabled = enabled;
             textBox_reason.Enabled = enabled;
         }
 
-        private async void setReward(int rewardId)
+        private async void setFiredEmployee(int firedEmployeeId)
         {
             try
             {
-                reward = await RestApi.RewardService.Get(rewardId);
+                firedEmployee = await RestApi.FiredEmployeeService.Get(firedEmployeeId);
 
-                textBox_id.Text = reward.RewardId.ToString();
-                comboBox_employeeId.Text = reward.EmployeeId.ToString();
-                dateTimePicker_date.Text = reward.Date.ToString();
-                textBox_amount.Text = reward.Amount.ToString();
-                textBox_reason.Text = reward.Reason;
+                textBox_id.Text = firedEmployee.FiredEmployeeId.ToString();
+                comboBox_employeeId.Text = firedEmployee.EmployeeId.ToString();
+                dateTimePicker_dateOfDismissal.Text = firedEmployee.DateOfDismissal.ToString();
+                textBox_reason.Text = firedEmployee.Reason.ToString();
             }
             catch (Exception exception)
             {
@@ -81,24 +79,23 @@ namespace HRD_App.Forms
             {
                 Employee employee = employees[Int32.Parse(comboBox_employeeId.Text)];
 
-                Reward reward = new Reward();
-                reward.EmployeeId = employee.EmployeeId;
-                reward.Date = dateTimePicker_date.Value.Date;
-                reward.Amount = Double.Parse(textBox_amount.Text);
-                reward.Reason = textBox_reason.Text;
+                FiredEmployee firedEmployee = new FiredEmployee();
+                firedEmployee.EmployeeId = employee.EmployeeId;
+                firedEmployee.DateOfDismissal = dateTimePicker_dateOfDismissal.Value.Date;
+                firedEmployee.Reason = textBox_reason.Text;
 
                 int id = (textBox_id.Text != "") ? Int32.Parse(textBox_id.Text) : -1;
                 if (id == -1)
-                    reward = await RestApi.RewardService.Add(reward);
+                    firedEmployee = await RestApi.FiredEmployeeService.Add(firedEmployee);
                 else
                 {
-                    reward.RewardId = id;
-                    await RestApi.RewardService.Update(id, reward);
-                    reward.Employee = employee;
+                    firedEmployee.FiredEmployeeId = id;
+                    await RestApi.FiredEmployeeService.Update(id, firedEmployee);
+                    firedEmployee.Employee = employee;
                 }
                 MessageBox.Show("Запись успешно сохранена!");
 
-                OnValueChanged(reward);
+                OnValueChanged(firedEmployee);
                 Close();
             }
             catch (Exception exception)
@@ -118,15 +115,15 @@ namespace HRD_App.Forms
                 isValid = false;
             }
 
-            if (dateTimePicker_date.Text == "")
+            if (dateTimePicker_dateOfDismissal.Text == "")
             {
-                errorProvider.SetError(dateTimePicker_date, "Поле обязательно для заполнения!");
+                errorProvider.SetError(dateTimePicker_dateOfDismissal, "Поле обязательно для заполнения!");
                 isValid = false;
             }
 
-            if (textBox_amount.Text == "")
+            if (dateTimePicker_dateOfDismissal.Text == "")
             {
-                errorProvider.SetError(textBox_amount, "Поле обязательно для заполнения!");
+                errorProvider.SetError(dateTimePicker_dateOfDismissal, "Поле обязательно для заполнения!");
                 isValid = false;
             }
 
@@ -135,17 +132,7 @@ namespace HRD_App.Forms
                 errorProvider.SetError(textBox_reason, "Поле обязательно для заполнения!");
                 isValid = false;
             }
-
-            try
-            {
-                Double.Parse(textBox_amount.Text);
-            }
-            catch (Exception exception)
-            {
-                errorProvider.SetError(textBox_amount, "Неверный формат!");
-                isValid = false;
-            }
-
+            
             return isValid;
         }
     }

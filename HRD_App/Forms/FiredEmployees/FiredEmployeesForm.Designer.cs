@@ -1,6 +1,6 @@
 ﻿namespace HRD_App.Forms
 {
-    partial class ResumesForm
+    partial class FiredEmployeesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,40 +31,33 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridView_resumes = new System.Windows.Forms.DataGridView();
-            this.ResumeIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VacancyIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PatronymicColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BirthDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmailColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EducationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InstitutionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SpecialtyColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox_search = new System.Windows.Forms.PictureBox();
+            this.dataGridView_firedEmployees = new System.Windows.Forms.DataGridView();
+            this.FiredEmployeeIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateOfDismissalColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReasonColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.button_update = new System.Windows.Forms.Button();
             this.button_add = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_resumes)).BeginInit();
+            this.pictureBox_search = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_firedEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_search)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView_resumes
+            // dataGridView_firedEmployees
             // 
-            this.dataGridView_resumes.AllowUserToAddRows = false;
-            this.dataGridView_resumes.AllowUserToDeleteRows = false;
-            this.dataGridView_resumes.AllowUserToResizeColumns = false;
-            this.dataGridView_resumes.AllowUserToResizeRows = false;
-            this.dataGridView_resumes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridView_firedEmployees.AllowUserToAddRows = false;
+            this.dataGridView_firedEmployees.AllowUserToDeleteRows = false;
+            this.dataGridView_firedEmployees.AllowUserToResizeColumns = false;
+            this.dataGridView_firedEmployees.AllowUserToResizeRows = false;
+            this.dataGridView_firedEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView_resumes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_resumes.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView_resumes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView_resumes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView_firedEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_firedEmployees.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView_firedEmployees.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView_firedEmployees.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.CadetBlue;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -73,20 +66,13 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_resumes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView_resumes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_resumes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ResumeIdColumn,
-            this.VacancyIdColumn,
-            this.LastNameColumn,
-            this.FirstNameColumn,
-            this.PatronymicColumn,
-            this.BirthDateColumn,
-            this.PhoneColumn,
-            this.EmailColumn,
-            this.EducationColumn,
-            this.InstitutionColumn,
-            this.SpecialtyColumn});
+            this.dataGridView_firedEmployees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView_firedEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_firedEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FiredEmployeeIdColumn,
+            this.EmployeeIdColumn,
+            this.DateOfDismissalColumn,
+            this.ReasonColumn});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -94,115 +80,53 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_resumes.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView_resumes.EnableHeadersVisualStyles = false;
-            this.dataGridView_resumes.GridColor = System.Drawing.Color.White;
-            this.dataGridView_resumes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dataGridView_resumes.Location = new System.Drawing.Point(16, 47);
-            this.dataGridView_resumes.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView_resumes.MultiSelect = false;
-            this.dataGridView_resumes.Name = "dataGridView_resumes";
-            this.dataGridView_resumes.ReadOnly = true;
-            this.dataGridView_resumes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView_resumes.RowHeadersVisible = false;
+            this.dataGridView_firedEmployees.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView_firedEmployees.EnableHeadersVisualStyles = false;
+            this.dataGridView_firedEmployees.GridColor = System.Drawing.Color.White;
+            this.dataGridView_firedEmployees.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dataGridView_firedEmployees.Location = new System.Drawing.Point(16, 47);
+            this.dataGridView_firedEmployees.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView_firedEmployees.MultiSelect = false;
+            this.dataGridView_firedEmployees.Name = "dataGridView_firedEmployees";
+            this.dataGridView_firedEmployees.ReadOnly = true;
+            this.dataGridView_firedEmployees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView_firedEmployees.RowHeadersVisible = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView_resumes.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView_resumes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_resumes.Size = new System.Drawing.Size(945, 378);
-            this.dataGridView_resumes.TabIndex = 0;
-            this.dataGridView_resumes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_resumes_CellClick);
+            this.dataGridView_firedEmployees.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView_firedEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_firedEmployees.Size = new System.Drawing.Size(947, 378);
+            this.dataGridView_firedEmployees.TabIndex = 0;
+            this.dataGridView_firedEmployees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_firedEmployees_CellClick);
             // 
-            // ResumeIdColumn
+            // FiredEmployeeIdColumn
             // 
-            this.ResumeIdColumn.DataPropertyName = "ResumeId";
-            this.ResumeIdColumn.HeaderText = "Код";
-            this.ResumeIdColumn.Name = "ResumeIdColumn";
-            this.ResumeIdColumn.ReadOnly = true;
+            this.FiredEmployeeIdColumn.DataPropertyName = "FiredEmployeeId";
+            this.FiredEmployeeIdColumn.HeaderText = "Код";
+            this.FiredEmployeeIdColumn.Name = "FiredEmployeeIdColumn";
+            this.FiredEmployeeIdColumn.ReadOnly = true;
             // 
-            // VacancyIdColumn
+            // EmployeeIdColumn
             // 
-            this.VacancyIdColumn.DataPropertyName = "PositionName";
-            this.VacancyIdColumn.HeaderText = "Должность";
-            this.VacancyIdColumn.Name = "VacancyIdColumn";
-            this.VacancyIdColumn.ReadOnly = true;
+            this.EmployeeIdColumn.DataPropertyName = "EmployeeId";
+            this.EmployeeIdColumn.HeaderText = "Код сотрудника";
+            this.EmployeeIdColumn.Name = "EmployeeIdColumn";
+            this.EmployeeIdColumn.ReadOnly = true;
             // 
-            // LastNameColumn
+            // DateOfDismissalColumn
             // 
-            this.LastNameColumn.DataPropertyName = "LastName";
-            this.LastNameColumn.HeaderText = "Фамилия";
-            this.LastNameColumn.Name = "LastNameColumn";
-            this.LastNameColumn.ReadOnly = true;
+            this.DateOfDismissalColumn.DataPropertyName = "DateOfDismissal";
+            this.DateOfDismissalColumn.HeaderText = "Дата увольнения";
+            this.DateOfDismissalColumn.Name = "DateOfDismissalColumn";
+            this.DateOfDismissalColumn.ReadOnly = true;
             // 
-            // FirstNameColumn
+            // ReasonColumn
             // 
-            this.FirstNameColumn.DataPropertyName = "FirstName";
-            this.FirstNameColumn.HeaderText = "Имя";
-            this.FirstNameColumn.Name = "FirstNameColumn";
-            this.FirstNameColumn.ReadOnly = true;
-            // 
-            // PatronymicColumn
-            // 
-            this.PatronymicColumn.DataPropertyName = "Patronymic";
-            this.PatronymicColumn.HeaderText = "Отчество";
-            this.PatronymicColumn.Name = "PatronymicColumn";
-            this.PatronymicColumn.ReadOnly = true;
-            // 
-            // BirthDateColumn
-            // 
-            this.BirthDateColumn.DataPropertyName = "BirthDate";
-            this.BirthDateColumn.HeaderText = "Дата рождения";
-            this.BirthDateColumn.Name = "BirthDateColumn";
-            this.BirthDateColumn.ReadOnly = true;
-            // 
-            // PhoneColumn
-            // 
-            this.PhoneColumn.DataPropertyName = "Phone";
-            this.PhoneColumn.HeaderText = "Телефон";
-            this.PhoneColumn.Name = "PhoneColumn";
-            this.PhoneColumn.ReadOnly = true;
-            // 
-            // EmailColumn
-            // 
-            this.EmailColumn.DataPropertyName = "Email";
-            this.EmailColumn.HeaderText = "E-mail";
-            this.EmailColumn.Name = "EmailColumn";
-            this.EmailColumn.ReadOnly = true;
-            // 
-            // EducationColumn
-            // 
-            this.EducationColumn.DataPropertyName = "Education";
-            this.EducationColumn.HeaderText = "Образование";
-            this.EducationColumn.Name = "EducationColumn";
-            this.EducationColumn.ReadOnly = true;
-            // 
-            // InstitutionColumn
-            // 
-            this.InstitutionColumn.DataPropertyName = "Institution";
-            this.InstitutionColumn.HeaderText = "Учреждение образования";
-            this.InstitutionColumn.Name = "InstitutionColumn";
-            this.InstitutionColumn.ReadOnly = true;
-            // 
-            // SpecialtyColumn
-            // 
-            this.SpecialtyColumn.DataPropertyName = "Specialty";
-            this.SpecialtyColumn.HeaderText = "Специальность";
-            this.SpecialtyColumn.Name = "SpecialtyColumn";
-            this.SpecialtyColumn.ReadOnly = true;
-            // 
-            // pictureBox_search
-            // 
-            this.pictureBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox_search.BackColor = System.Drawing.Color.CadetBlue;
-            this.pictureBox_search.Image = global::HRD_App.Properties.Resources.baseline_search_white_18dp;
-            this.pictureBox_search.Location = new System.Drawing.Point(923, 18);
-            this.pictureBox_search.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox_search.Name = "pictureBox_search";
-            this.pictureBox_search.Size = new System.Drawing.Size(37, 22);
-            this.pictureBox_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_search.TabIndex = 17;
-            this.pictureBox_search.TabStop = false;
+            this.ReasonColumn.DataPropertyName = "Reason";
+            this.ReasonColumn.HeaderText = "Причина";
+            this.ReasonColumn.Name = "ReasonColumn";
+            this.ReasonColumn.ReadOnly = true;
             // 
             // textBox_search
             // 
@@ -278,7 +202,20 @@
             this.button_delete.UseVisualStyleBackColor = false;
             this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
-            // ResumesForm
+            // pictureBox_search
+            // 
+            this.pictureBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox_search.BackColor = System.Drawing.Color.CadetBlue;
+            this.pictureBox_search.Image = global::HRD_App.Properties.Resources.baseline_search_white_18dp;
+            this.pictureBox_search.Location = new System.Drawing.Point(923, 18);
+            this.pictureBox_search.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox_search.Name = "pictureBox_search";
+            this.pictureBox_search.Size = new System.Drawing.Size(37, 22);
+            this.pictureBox_search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_search.TabIndex = 17;
+            this.pictureBox_search.TabStop = false;
+            // 
+            // FiredEmployeesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -288,13 +225,13 @@
             this.Controls.Add(this.textBox_search);
             this.Controls.Add(this.button_update);
             this.Controls.Add(this.button_add);
-            this.Controls.Add(this.dataGridView_resumes);
+            this.Controls.Add(this.dataGridView_firedEmployees);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "ResumesForm";
+            this.Name = "FiredEmployeesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Резюме";
-            this.Shown += new System.EventHandler(this.ResumesForm_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_resumes)).EndInit();
+            this.Text = "Уволенные сотрудники";
+            this.Shown += new System.EventHandler(this.FiredEmployeesForm_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_firedEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_search)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -302,22 +239,16 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView_resumes;
+
+        private System.Windows.Forms.DataGridView dataGridView_firedEmployees;
         private System.Windows.Forms.PictureBox pictureBox_search;
         private System.Windows.Forms.TextBox textBox_search;
         private System.Windows.Forms.Button button_update;
         private System.Windows.Forms.Button button_add;
         private System.Windows.Forms.Button button_delete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ResumeIdColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VacancyIdColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirstNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PatronymicColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BirthDateColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmailColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EducationColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn InstitutionColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SpecialtyColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FiredEmployeeIdColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeIdColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateOfDismissalColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReasonColumn;
     }
 }

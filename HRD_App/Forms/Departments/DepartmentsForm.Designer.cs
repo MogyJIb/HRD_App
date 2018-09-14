@@ -98,6 +98,7 @@
             this.dataGridView_departments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_departments.Size = new System.Drawing.Size(945, 378);
             this.dataGridView_departments.TabIndex = 0;
+            this.dataGridView_departments.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_departments_CellClick);
             // 
             // DepartmentIdColumn
             // 
@@ -229,6 +230,7 @@
             this.Name = "DepartmentsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Отделы";
+            this.Shown += new System.EventHandler(this.DepartmentsForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_departments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_search)).EndInit();
             this.ResumeLayout(false);
