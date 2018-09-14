@@ -30,7 +30,7 @@ namespace HRD_App.Forms
             button_delete.Enabled = false;
         }
 
-        public void init()
+        public async void init()
         {
             workedTimes = new BindingList<WorkedTime>();
             dataGridView_workedTimes.DataSource = workedTimes;
@@ -39,7 +39,7 @@ namespace HRD_App.Forms
             dataGridView_workedTimes.Columns["EmployeeName"].Visible = false;
 
 
-            AddWorkedTimes(RestApi.WorkedTimeService.GetAll(false).Result);
+            AddWorkedTimes(await RestApi.WorkedTimeService.GetAll(false));
             dataGridView_workedTimes.Refresh();
         }
 

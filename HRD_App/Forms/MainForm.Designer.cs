@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Работающие");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Уволенные");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Сотрудники", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Учет посещаемости");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Учет отпусков");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Учет поощрений");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Табельный учет", new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode5,
-            treeNode6});
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Отделы");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Должности");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Структура", new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode9});
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Вакансии");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Резюме");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Работающие");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Уволенные");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Сотрудники", new System.Windows.Forms.TreeNode[] {
+            treeNode13,
+            treeNode14});
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Учет отработанного времени");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Учет отпусков");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Учет поощрений");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Табельный учет", new System.Windows.Forms.TreeNode[] {
+            treeNode16,
+            treeNode17,
+            treeNode18});
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Отделы");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Должности");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Структура", new System.Windows.Forms.TreeNode[] {
+            treeNode20,
+            treeNode21});
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Вакансии");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Резюме");
             this.treeView_directories = new System.Windows.Forms.TreeView();
             this.groupBox_directories = new System.Windows.Forms.GroupBox();
             this.groupBox_directories.SuspendLayout();
@@ -61,36 +61,36 @@
             this.treeView_directories.Location = new System.Drawing.Point(4, 19);
             this.treeView_directories.Margin = new System.Windows.Forms.Padding(4);
             this.treeView_directories.Name = "treeView_directories";
-            treeNode1.Name = "Узел3";
-            treeNode1.Text = "Работающие";
-            treeNode2.Name = "Узел4";
-            treeNode2.Text = "Уволенные";
-            treeNode3.Name = "Узел0";
-            treeNode3.Text = "Сотрудники";
-            treeNode4.Name = "Узел6";
-            treeNode4.Text = "Учет посещаемости";
-            treeNode5.Name = "Узел7";
-            treeNode5.Text = "Учет отпусков";
-            treeNode6.Name = "Узел8";
-            treeNode6.Text = "Учет поощрений";
-            treeNode7.Name = "Узел5";
-            treeNode7.Text = "Табельный учет";
-            treeNode8.Name = "Узел12";
-            treeNode8.Text = "Отделы";
-            treeNode9.Name = "Узел13";
-            treeNode9.Text = "Должности";
-            treeNode10.Name = "Узел9";
-            treeNode10.Text = "Структура";
-            treeNode11.Name = "Узел10";
-            treeNode11.Text = "Вакансии";
-            treeNode12.Name = "Узел11";
-            treeNode12.Text = "Резюме";
+            treeNode13.Name = "Узел3";
+            treeNode13.Text = "Работающие";
+            treeNode14.Name = "Узел4";
+            treeNode14.Text = "Уволенные";
+            treeNode15.Name = "Узел0";
+            treeNode15.Text = "Сотрудники";
+            treeNode16.Name = "Узел6";
+            treeNode16.Text = "Учет отработанного времени";
+            treeNode17.Name = "Узел7";
+            treeNode17.Text = "Учет отпусков";
+            treeNode18.Name = "Узел8";
+            treeNode18.Text = "Учет поощрений";
+            treeNode19.Name = "Узел5";
+            treeNode19.Text = "Табельный учет";
+            treeNode20.Name = "Узел12";
+            treeNode20.Text = "Отделы";
+            treeNode21.Name = "Узел13";
+            treeNode21.Text = "Должности";
+            treeNode22.Name = "Узел9";
+            treeNode22.Text = "Структура";
+            treeNode23.Name = "Узел10";
+            treeNode23.Text = "Вакансии";
+            treeNode24.Name = "Узел11";
+            treeNode24.Text = "Резюме";
             this.treeView_directories.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode7,
-            treeNode10,
-            treeNode11,
-            treeNode12});
+            treeNode15,
+            treeNode19,
+            treeNode22,
+            treeNode23,
+            treeNode24});
             this.treeView_directories.Size = new System.Drawing.Size(262, 302);
             this.treeView_directories.TabIndex = 0;
             this.treeView_directories.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_directories_AfterSelect);
@@ -116,6 +116,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Отдел кадров";
             this.groupBox_directories.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -33,6 +33,27 @@ namespace HRD_App.Forms
                     case "Уволенные":
                         new FiredEmployeesForm().ShowDialog();
                         break;
+                    case "Учет отработанного времени":
+                        new WorkedTimesForm().ShowDialog();
+                        break;
+                    case "Учет отпусков":
+                        new HolidaysForm().ShowDialog();
+                        break;
+                    case "Учет поощрений":
+                        new RewardsForm().ShowDialog();
+                        break;
+                    case "Резюме":
+                        new ResumesForm().ShowDialog();
+                        break;
+                    case "Вакансии":
+                        new VacanciesForm().ShowDialog();
+                        break;
+                    case "Отделы":
+                        new DepartmentsForm().ShowDialog();
+                        break;
+                    case "Должности":
+                        new PositionsForm().ShowDialog();
+                        break;
                 }
 
             } catch(Exception exception)

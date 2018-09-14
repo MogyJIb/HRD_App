@@ -7,5 +7,5 @@ using System.Threading.Tasks;
 
 namespace HRD_App.Logic
 {
-    public delegate void OnValueChangedListener<T>(T department);
+    public delegate void OnValueChangedListener<T>(T value);
 }

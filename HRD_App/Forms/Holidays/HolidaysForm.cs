@@ -22,8 +22,6 @@ namespace HRD_App.Forms
         {
             InitializeComponent();
 
-            new AuthorizationForm().ShowDialog();
-
             init();
 
             button_update.BackColor = Color.Gray;
@@ -32,7 +30,7 @@ namespace HRD_App.Forms
             button_delete.Enabled = false;
         }
 
-        public void init()
+        public async void init()
         {
             holidays = new BindingList<Holiday>();
             dataGridView_holidays.DataSource = holidays;
@@ -41,7 +39,7 @@ namespace HRD_App.Forms
             dataGridView_holidays.Columns["EmployeeName"].Visible = false;
 
 
-            AddHolidays(RestApi.HolidayService.GetAll(false).Result);
+            AddHolidays(await RestApi.HolidayService.GetAll(false));
             dataGridView_holidays.Refresh();
         }
 

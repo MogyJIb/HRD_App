@@ -22,8 +22,6 @@ namespace HRD_App.Forms
         {
             InitializeComponent();
 
-            new AuthorizationForm().ShowDialog();
-
             init();
 
             button_update.BackColor = Color.Gray;
@@ -32,7 +30,7 @@ namespace HRD_App.Forms
             button_delete.Enabled = false;
         }
 
-        public void init()
+        public async void init()
         {
             vacancies = new BindingList<Vacancy>();
             dataGridView_vacancies.DataSource = vacancies;
@@ -41,7 +39,7 @@ namespace HRD_App.Forms
             dataGridView_vacancies.Columns["PositionId"].Visible = false;
 
 
-            AddVacancies(RestApi.VacancyService.GetAll(false).Result);
+            AddVacancies(await RestApi.VacancyService.GetAll(false));
             dataGridView_vacancies.Refresh();
         }
 

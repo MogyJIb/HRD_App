@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Errors\ApiException.cs" />
+    <Compile Include="Errors\AuthanticationFaildException.cs" />
     <Compile Include="Errors\NonExistentLoginException.cs" />
     <Compile Include="Forms\BaseForm.cs">
       <SubType>Form</SubType>

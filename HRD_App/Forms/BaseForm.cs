@@ -11,11 +11,9 @@ namespace HRD_App.Forms
 {
     public partial class BaseForm : Form
     {
-
         protected void HandleError(Exception exception)
         {
-            if (exception is ApiException &&
-                ((ApiException)exception).ErrorType == ErrorType.AuthanticationFaild)
+            if (exception is AuthanticationFaildException)
             {
                 new AuthorizationForm().ShowDialog();
             }

@@ -22,8 +22,6 @@ namespace HRD_App.Forms
         {
             InitializeComponent();
 
-            new AuthorizationForm().ShowDialog();
-
             init();
 
             button_update.BackColor = Color.Gray;
@@ -32,14 +30,13 @@ namespace HRD_App.Forms
             button_delete.Enabled = false;
         }
 
-        public void init()
+        public async void init()
         {
             departments = new BindingList<Department>();
             dataGridView_departments.DataSource = departments;
             dataGridView_departments.Columns["Deleted"].Visible = false;
-
-
-            AddDepartments(RestApi.DepartmentService.GetAll(false).Result);
+            
+            AddDepartments(await RestApi.DepartmentService.GetAll(false));
             dataGridView_departments.Refresh();
         }
 

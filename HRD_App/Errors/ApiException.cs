@@ -23,6 +23,8 @@ namespace HRD_App.Errors
                     return new WrongPasswordException(errorType);
                 case ErrorType.NonExistentLogin:
                     return new NonExistentLoginException(errorType);
+                case ErrorType.AuthanticationFaild:
+                    return new AuthanticationFaildException(errorType);
                 default:
                     return new ApiException(errorType);
             }

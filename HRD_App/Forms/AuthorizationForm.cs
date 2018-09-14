@@ -20,8 +20,6 @@ namespace HRD_App
         public AuthorizationForm()
         {
             InitializeComponent();
-            textBox_login.Text = "zhenya";
-            textBox_password.Text = "erika";
         }
         
         private void TextBox_Enter(TextBox textBox)
