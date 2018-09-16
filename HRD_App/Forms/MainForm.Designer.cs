@@ -28,191 +28,294 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Работающие");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Уволенные");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Сотрудники", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Учет отработанного времени");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Учет отпусков");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Учет поощрений");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Табельный учет", new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode5,
-            treeNode6});
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Отделы");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Должности");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Структура", new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode9});
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Вакансии");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Резюме");
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.treeView_directories = new System.Windows.Forms.TreeView();
-            this.groupBox_directories = new System.Windows.Forms.GroupBox();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.сотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.работающиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.уволенныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.табельныйУчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.учетОтработанногоВремениToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.учетОтпусковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.учетПоощренийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.структураToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отделыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.должностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.вакансииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.резюмеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox_structure = new System.Windows.Forms.GroupBox();
             this.treeView_structure = new System.Windows.Forms.TreeView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox_employees = new System.Windows.Forms.GroupBox();
+            this.dataGridView_employees = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox_directories.SuspendLayout();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip.SuspendLayout();
             this.groupBox_structure.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox_employees.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_employees)).BeginInit();
             this.SuspendLayout();
             // 
-            // treeView_directories
+            // menuStrip
             // 
-            this.treeView_directories.BackColor = System.Drawing.SystemColors.Window;
-            this.treeView_directories.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView_directories.ForeColor = System.Drawing.Color.Black;
-            this.treeView_directories.ItemHeight = 16;
-            this.treeView_directories.Location = new System.Drawing.Point(3, 16);
-            this.treeView_directories.Name = "treeView_directories";
-            treeNode1.Name = "Узел3";
-            treeNode1.Text = "Работающие";
-            treeNode2.Name = "Узел4";
-            treeNode2.Text = "Уволенные";
-            treeNode3.Name = "Узел0";
-            treeNode3.Text = "Сотрудники";
-            treeNode4.Name = "Узел6";
-            treeNode4.Text = "Учет отработанного времени";
-            treeNode5.Name = "Узел7";
-            treeNode5.Text = "Учет отпусков";
-            treeNode6.Name = "Узел8";
-            treeNode6.Text = "Учет поощрений";
-            treeNode7.Name = "Узел5";
-            treeNode7.Text = "Табельный учет";
-            treeNode8.Name = "Узел12";
-            treeNode8.Text = "Отделы";
-            treeNode9.Name = "Узел13";
-            treeNode9.Text = "Должности";
-            treeNode10.Name = "Узел9";
-            treeNode10.Text = "Структура";
-            treeNode11.Name = "Узел10";
-            treeNode11.Text = "Вакансии";
-            treeNode12.Name = "Узел11";
-            treeNode12.Text = "Резюме";
-            this.treeView_directories.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode7,
-            treeNode10,
-            treeNode11,
-            treeNode12});
-            this.treeView_directories.Size = new System.Drawing.Size(196, 245);
-            this.treeView_directories.TabIndex = 0;
-            this.treeView_directories.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_directories_AfterSelect);
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сотрудникиToolStripMenuItem,
+            this.табельныйУчетToolStripMenuItem,
+            this.структураToolStripMenuItem,
+            this.вакансииToolStripMenuItem,
+            this.резюмеToolStripMenuItem});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(1051, 28);
+            this.menuStrip.TabIndex = 3;
+            this.menuStrip.Text = "menuStrip1";
             // 
-            // groupBox_directories
+            // сотрудникиToolStripMenuItem
             // 
-            this.groupBox_directories.Controls.Add(this.treeView_directories);
-            this.groupBox_directories.Location = new System.Drawing.Point(12, 12);
-            this.groupBox_directories.Name = "groupBox_directories";
-            this.groupBox_directories.Size = new System.Drawing.Size(202, 264);
-            this.groupBox_directories.TabIndex = 0;
-            this.groupBox_directories.TabStop = false;
-            this.groupBox_directories.Text = "Справочники";
+            this.сотрудникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.работающиеToolStripMenuItem,
+            this.уволенныеToolStripMenuItem});
+            this.сотрудникиToolStripMenuItem.Name = "сотрудникиToolStripMenuItem";
+            this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
+            this.сотрудникиToolStripMenuItem.Text = "Сотрудники";
+            // 
+            // работающиеToolStripMenuItem
+            // 
+            this.работающиеToolStripMenuItem.Name = "работающиеToolStripMenuItem";
+            this.работающиеToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.работающиеToolStripMenuItem.Text = "Работающие";
+            this.работающиеToolStripMenuItem.Click += new System.EventHandler(this.работающиеToolStripMenuItem_Click);
+            // 
+            // уволенныеToolStripMenuItem
+            // 
+            this.уволенныеToolStripMenuItem.Name = "уволенныеToolStripMenuItem";
+            this.уволенныеToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.уволенныеToolStripMenuItem.Text = "Уволенные";
+            this.уволенныеToolStripMenuItem.Click += new System.EventHandler(this.уволенныеToolStripMenuItem_Click);
+            // 
+            // табельныйУчетToolStripMenuItem
+            // 
+            this.табельныйУчетToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.учетОтработанногоВремениToolStripMenuItem,
+            this.учетОтпусковToolStripMenuItem,
+            this.учетПоощренийToolStripMenuItem});
+            this.табельныйУчетToolStripMenuItem.Name = "табельныйУчетToolStripMenuItem";
+            this.табельныйУчетToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
+            this.табельныйУчетToolStripMenuItem.Text = "Табельный учет";
+            // 
+            // учетОтработанногоВремениToolStripMenuItem
+            // 
+            this.учетОтработанногоВремениToolStripMenuItem.Name = "учетОтработанногоВремениToolStripMenuItem";
+            this.учетОтработанногоВремениToolStripMenuItem.Size = new System.Drawing.Size(291, 26);
+            this.учетОтработанногоВремениToolStripMenuItem.Text = "Учет отработанного времени";
+            this.учетОтработанногоВремениToolStripMenuItem.Click += new System.EventHandler(this.учетОтработанногоВремениToolStripMenuItem_Click);
+            // 
+            // учетОтпусковToolStripMenuItem
+            // 
+            this.учетОтпусковToolStripMenuItem.Name = "учетОтпусковToolStripMenuItem";
+            this.учетОтпусковToolStripMenuItem.Size = new System.Drawing.Size(291, 26);
+            this.учетОтпусковToolStripMenuItem.Text = "Учет отпусков";
+            this.учетОтпусковToolStripMenuItem.Click += new System.EventHandler(this.учетОтпусковToolStripMenuItem_Click);
+            // 
+            // учетПоощренийToolStripMenuItem
+            // 
+            this.учетПоощренийToolStripMenuItem.Name = "учетПоощренийToolStripMenuItem";
+            this.учетПоощренийToolStripMenuItem.Size = new System.Drawing.Size(291, 26);
+            this.учетПоощренийToolStripMenuItem.Text = "Учет поощрений";
+            this.учетПоощренийToolStripMenuItem.Click += new System.EventHandler(this.учетПоощренийToolStripMenuItem_Click);
+            // 
+            // структураToolStripMenuItem
+            // 
+            this.структураToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.отделыToolStripMenuItem,
+            this.должностиToolStripMenuItem});
+            this.структураToolStripMenuItem.Name = "структураToolStripMenuItem";
+            this.структураToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
+            this.структураToolStripMenuItem.Text = "Структура";
+            // 
+            // отделыToolStripMenuItem
+            // 
+            this.отделыToolStripMenuItem.Name = "отделыToolStripMenuItem";
+            this.отделыToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
+            this.отделыToolStripMenuItem.Text = "Отделы";
+            this.отделыToolStripMenuItem.Click += new System.EventHandler(this.отделыToolStripMenuItem_Click);
+            // 
+            // должностиToolStripMenuItem
+            // 
+            this.должностиToolStripMenuItem.Name = "должностиToolStripMenuItem";
+            this.должностиToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
+            this.должностиToolStripMenuItem.Text = "Должности";
+            this.должностиToolStripMenuItem.Click += new System.EventHandler(this.должностиToolStripMenuItem_Click);
+            // 
+            // вакансииToolStripMenuItem
+            // 
+            this.вакансииToolStripMenuItem.Name = "вакансииToolStripMenuItem";
+            this.вакансииToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
+            this.вакансииToolStripMenuItem.Text = "Вакансии";
+            this.вакансииToolStripMenuItem.Click += new System.EventHandler(this.вакансииToolStripMenuItem_Click);
+            // 
+            // резюмеToolStripMenuItem
+            // 
+            this.резюмеToolStripMenuItem.Name = "резюмеToolStripMenuItem";
+            this.резюмеToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.резюмеToolStripMenuItem.Text = "Резюме";
+            this.резюмеToolStripMenuItem.Click += new System.EventHandler(this.резюмеToolStripMenuItem_Click);
             // 
             // groupBox_structure
             // 
+            this.groupBox_structure.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox_structure.Controls.Add(this.treeView_structure);
-            this.groupBox_structure.Location = new System.Drawing.Point(3, 3);
+            this.groupBox_structure.Location = new System.Drawing.Point(13, 32);
+            this.groupBox_structure.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_structure.Name = "groupBox_structure";
-            this.groupBox_structure.Size = new System.Drawing.Size(216, 351);
+            this.groupBox_structure.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox_structure.Size = new System.Drawing.Size(500, 405);
             this.groupBox_structure.TabIndex = 1;
             this.groupBox_structure.TabStop = false;
             this.groupBox_structure.Text = "Структура";
             // 
             // treeView_structure
             // 
+            this.treeView_structure.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.treeView_structure.BackColor = System.Drawing.SystemColors.Window;
             this.treeView_structure.ForeColor = System.Drawing.Color.Black;
             this.treeView_structure.ItemHeight = 16;
-            this.treeView_structure.Location = new System.Drawing.Point(3, 16);
+            this.treeView_structure.Location = new System.Drawing.Point(4, 19);
+            this.treeView_structure.Margin = new System.Windows.Forms.Padding(4);
             this.treeView_structure.Name = "treeView_structure";
-            this.treeView_structure.Size = new System.Drawing.Size(207, 245);
+            this.treeView_structure.Size = new System.Drawing.Size(492, 382);
             this.treeView_structure.TabIndex = 0;
+            this.treeView_structure.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_structure_AfterSelect);
             // 
-            // panel1
+            // groupBox_employees
             // 
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.groupBox_structure);
-            this.panel1.Location = new System.Drawing.Point(238, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(538, 350);
-            this.panel1.TabIndex = 2;
+            this.groupBox_employees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_employees.Controls.Add(this.dataGridView_employees);
+            this.groupBox_employees.Location = new System.Drawing.Point(521, 32);
+            this.groupBox_employees.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox_employees.Name = "groupBox_employees";
+            this.groupBox_employees.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox_employees.Size = new System.Drawing.Size(517, 409);
+            this.groupBox_employees.TabIndex = 2;
+            this.groupBox_employees.TabStop = false;
+            this.groupBox_employees.Text = "Сотрудники";
             // 
-            // groupBox1
+            // dataGridView_employees
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(225, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(288, 332);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Сотрудники";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.ColumnHeadersVisible = false;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView_employees.AllowUserToAddRows = false;
+            this.dataGridView_employees.AllowUserToDeleteRows = false;
+            this.dataGridView_employees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView_employees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_employees.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView_employees.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView_employees.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView_employees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_employees.ColumnHeadersVisible = false;
+            this.dataGridView_employees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.dataGridView_employees.EnableHeadersVisualStyles = false;
+            this.dataGridView_employees.GridColor = System.Drawing.Color.White;
+            this.dataGridView_employees.Location = new System.Drawing.Point(4, 19);
+            this.dataGridView_employees.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView_employees.MultiSelect = false;
+            this.dataGridView_employees.Name = "dataGridView_employees";
+            this.dataGridView_employees.ReadOnly = true;
+            this.dataGridView_employees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView_employees.RowHeadersVisible = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView_employees.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView_employees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_employees.Size = new System.Drawing.Size(509, 386);
+            this.dataGridView_employees.TabIndex = 0;
+            this.dataGridView_employees.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_employees_CellDoubleClick);
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Column1";
+            this.Column1.DataPropertyName = "LastName";
+            this.Column1.HeaderText = "Фамилия";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "FirstName";
+            this.Column2.HeaderText = "Имя";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Patronymic";
+            this.Column3.HeaderText = "Отчество";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "EmployeeId";
+            this.Column4.HeaderText = "Код";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Visible = false;
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 448);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox_directories);
+            this.ClientSize = new System.Drawing.Size(1051, 460);
+            this.Controls.Add(this.groupBox_structure);
+            this.Controls.Add(this.groupBox_employees);
+            this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Отдел кадров";
-            this.groupBox_directories.ResumeLayout(false);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.groupBox_structure.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox_employees.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_employees)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TreeView treeView_directories;
-        private System.Windows.Forms.GroupBox groupBox_directories;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem сотрудникиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem работающиеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem уволенныеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem табельныйУчетToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem учетОтработанногоВремениToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem учетОтпусковToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem учетПоощренийToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem структураToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem отделыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem должностиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem вакансииToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem резюмеToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox_structure;
         private System.Windows.Forms.TreeView treeView_structure;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBox_employees;
+        private System.Windows.Forms.DataGridView dataGridView_employees;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
